@@ -20,9 +20,9 @@ const {
 .block {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;      
+  gap: 64px;
   align-items: center;
-  margin: 40px 1; 
+  margin: 96px 1;
 }
 
 .block.reverse {
@@ -39,12 +39,23 @@ const {
 }
 
 .content h2 {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 @media (max-width: 768px) {
   .block {
-    margin: 24px 0; /* mai puțin pe mobil */
+    grid-template-columns: 1fr; /* o singură coloană */
+    gap: 24px; /* mai puțin spațiu între text și imagine */
+  }
+
+  .block.reverse {
+    direction: ltr; /* ignorăm reverse pe mobil */
+  }
+
+  .media,
+  .content {
+    width: 100%;
   }
 }
+
 
 </style>
