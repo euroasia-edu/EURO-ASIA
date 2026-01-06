@@ -1,0 +1,44 @@
+---
+const {
+  title,
+  reverse = false
+} = Astro.props;
+---
+
+<section class={`block ${reverse ? 'reverse' : ''}`}>
+  <div class="media">
+    <slot name="media" />
+  </div>
+
+  <div class="content">
+    <h2>{title}</h2>
+    <slot />
+  </div>
+</section>
+
+<style>
+.block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin: 96px 0;
+}
+
+.block.reverse {
+  direction: rtl;
+}
+
+.block.reverse > * {
+  direction: ltr;
+}
+
+.media img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.content h2 {
+  margin-bottom: 16px;
+}
+</style>

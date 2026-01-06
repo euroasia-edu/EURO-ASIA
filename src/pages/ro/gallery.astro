@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import GalleryGrid from "../../components/GalleryGrid.jsx";
+
+const images = [
+  "/images/gallery1.jpg",
+  "/images/gallery2.jpg",
+  "/images/gallery3.jpg"
+];
+---
+
+<BaseLayout title="Galerie | EURO ASIA EDUCATION">
+  <Header lang="ro" />
+
+  <section>
+    <div class="container">
+      <GalleryGrid client:load images={images} />
+    </div>
+  </section>
+</BaseLayout>
+    

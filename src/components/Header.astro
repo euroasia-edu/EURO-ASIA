@@ -1,0 +1,51 @@
+---
+const { lang = "ro" } = Astro.props;
+---
+
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">
+      EURO ASIA EDUCATION
+    </div>
+
+    <nav class="nav">
+      <a href={`/${lang}/`}>Home</a>
+      <a href={`/${lang}/services`}>Services</a>
+      <a href={`/${lang}/gallery`}>Gallery</a>
+      <a href={`/${lang}/contact`}>Contact</a>
+      
+    </nav>
+
+    <div class="lang">
+      <a href="/ro/">RO</a> | <a href="/en/">EN</a>
+    </div>
+  </div>
+</header>
+
+<style>
+.header {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.nav a {
+  margin: 0 16px;
+  font-weight: 500;
+}
+
+.lang {
+  font-size: 14px;
+  color: var(--muted);
+}
+</style>

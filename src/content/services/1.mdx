@@ -1,0 +1,19 @@
+import ServiceBlock from "../../components/ServiceBlock.astro";
+import ImageSlider from "../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Consiliere educațională">
+  <p>
+    Analizăm profilul academic al fiecărui student și oferim recomandări
+    personalizate pentru universități de top.
+  </p>
+
+  <p>
+    Lucrăm individual, transparent și orientat pe rezultate.
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+    "/images/consulting1.jpg",
+    "/images/consulting2.jpg"
+  ]} />
+</ServiceBlock>
