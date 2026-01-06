@@ -1,29 +1,21 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ServiceBlock from "../../components/ServiceBlock.astro";
 
-import Consulting from "../../content/services/1.mdx";
-import Applications from "../../content/services/2.mdx";
-import Visas from "../../content/services/3.mdx";
+import Administrare from "../../content/services/1administrare.mdx";
+import Cazare from "../../content/services/2cazare.mdx";
+import Transport from "../../content/services/3transport.mdx";
+import Instruire from "../../content/services/4instruire.mdx";
+import Activitati from "../../content/services/5activitati.mdx";
 
-const services = [
-  { Component: Consulting, frontmatter: Consulting.frontmatter },
-  { Component: Applications, frontmatter: Applications.frontmatter },
-  { Component: Visas, frontmatter: Visas.frontmatter }
-];
 ---
 
-<BaseLayout title="Servicii | EURO ASIA EDUCATION" lang="ro">
-  <div class="container">
- {services.map(({ Component, frontmatter }, i) => (
-  <ServiceBlock
-    title={frontmatter.title}
-    reverse={frontmatter.reverse || i % 2 === 1}
-  >
-    <img slot="media" src={frontmatter.image} alt={frontmatter.title} />
-    <Component />
-  </ServiceBlock>
-))}
+<BaseLayout title="Services | EURO ASIA EDUCATION">
 
+  <div class="container">
+    <Administrare/>
+    <Cazare/>
+    <Transport/>
+    <Instruire/>
+    <Activitati/>
   </div>
 </BaseLayout>

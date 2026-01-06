@@ -1,0 +1,14 @@
+import ServiceBlock from "../../components/ServiceBlock.astro";
+import ImageSlider from "../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Instruire Pedagogică, Lingvistică și Culturală" reverse>
+  <p>
+Instruire Pedagogică, Lingvistică și Culturală (de ex. Curs de Limba Italiana)
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+    "/images/consulting1.jpg",
+    "/images/consulting2.jpg"
+  ]} />
+</ServiceBlock>

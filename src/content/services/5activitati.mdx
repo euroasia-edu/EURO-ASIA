@@ -1,0 +1,14 @@
+import ServiceBlock from "../../components/ServiceBlock.astro";
+import ImageSlider from "../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Activități culturale în Rimini" >
+  <p>
+O gamă largă de activități culturale în Rimini, atât pe timp de zi, cât și de noapte.
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+    "/images/consulting1.jpg",
+    "/images/consulting2.jpg"
+  ]} />
+</ServiceBlock>

@@ -1,0 +1,18 @@
+import ServiceBlock from "../../components/ServiceBlock.astro";
+import ImageSlider from "../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Administrare și Management" >
+  <p>
+
+Organizarea programului de formare (stagii de practică pentru studenți sau vizite de studiu pentru cadre didactice și profesioniști),
+ monitorizare, îndrumare, evaluare și certificare, incluzând Certificatul de Mobilitate Europass.
+  </p>
+
+
+
+  <ImageSlider slot="media" client:visible
+    images={[
+    "/images/consulting1.jpg",
+    "/images/consulting2.jpg"
+  ]} />
+</ServiceBlock>

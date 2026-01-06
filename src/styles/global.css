@@ -31,7 +31,7 @@ a {
 }
 
 section {
-  padding: 80px 0;
+  padding: 10px 0;
 }
 
 /* ================= Slider ================= */
@@ -47,7 +47,7 @@ section {
   border-radius: 12px;
   width: 100%;
   max-width: 520px;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 14 / 9;
 }
 
 .track {
@@ -59,8 +59,10 @@ section {
 .track img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;  /* fill complet */
+  object-position: center;
   user-select: none;
+  display: block;
 }
 
 .slider button {
@@ -302,41 +304,75 @@ html, body {
   flex: 1;
 }
 
+/* ==========Contact========== */
+.contact-section {
+  padding: 80px 0;
+  background: #f8f8f8;
+}
 
-/* ===== servicii ===== */
-
-.service-block {
+.contact-container {
   display: flex;
-  align-items: center;
-  gap: 32px; /* mai mic decât 40px anterior */
-  margin-bottom: 40px; /* mai mic decât 80px anterior */
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.service-block.reverse {
-  flex-direction: row-reverse;
+.contact-form, .contact-info {
+  flex: 1 1 400px;
 }
 
-.service-image img {
+.contact-form h1 {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
   width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
-.service-text h2 {
+.contact-form button {
+  padding: 12px 24px;
+  border: none;
+  background: #1f2937;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  background: #111;
+}
+
+.contact-info h2 {
+  margin-bottom: 16px;
+}
+
+.contact-info p {
   margin-bottom: 12px;
-  font-size: 1.8rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
-.service-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* responsive */
+/* Responsive */
 @media (max-width: 768px) {
-  .service-block {
+  .contact-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .contact-form, .contact-info {
+    flex: 1 1 100%;
   }
 }

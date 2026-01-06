@@ -1,0 +1,15 @@
+import ServiceBlock from "../../components/ServiceBlock.astro";
+import ImageSlider from "../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Transport Local și Transfer de la Aeroport">
+  <p>
+Transport Local (include transportul necesar pentru activitățile programului). 
+Transfer de la aeroport (de la aeroportul de sosire la cazare în ziua sosirii și de la cazare până la aeroportul de plecare în ziua plecării).
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+    "/images/consulting1.jpg",
+    "/images/consulting2.jpg"
+  ]} />
+</ServiceBlock>
