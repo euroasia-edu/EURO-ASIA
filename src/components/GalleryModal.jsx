@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 
 export default function GalleryModal({ images, startIndex, onClose }) {
   const [index, setIndex] = useState(startIndex);
+  const [animating, setAnimating] = useState(false);
   const startX = useRef(null);
 
   useEffect(() => {
@@ -14,11 +15,15 @@ export default function GalleryModal({ images, startIndex, onClose }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [index]);
 
-  const prev = () =>
-    setIndex((index - 1 + images.length) % images.length);
+  const prev = () => {
+    setAnimating(true);
+    setTimeout(() => setIndex((index - 1 + images.length) % images.length), 150);
+  };
 
-  const next = () =>
-    setIndex((index + 1) % images.length);
+  const next = () => {
+    setAnimating(true);
+    setTimeout(() => setIndex((index + 1) % images.length), 150);
+  };
 
   const onTouchStart = (e) => {
     startX.current = e.touches[0].clientX;
@@ -40,7 +45,13 @@ export default function GalleryModal({ images, startIndex, onClose }) {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        <img src={images[index]} />
+        <img
+          key={index}
+          src={images[index]}
+          className={`fade ${animating ? "fade-out" : "fade-in"}`}
+          onAnimationEnd={() => setAnimating(false)}
+        />
+        <div className="indicator">{index + 1} / {images.length}</div>
 
         <button className="prev" onClick={prev}>‹</button>
         <button className="next" onClick={next}>›</button>

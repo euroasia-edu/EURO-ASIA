@@ -1,44 +1,50 @@
 ---
-const {
-  title,
-  reverse = false
-} = Astro.props;
+const { title, reverse = false } = Astro.props;
 ---
 
-<section class={`block ${reverse ? 'reverse' : ''}`}>
-  <div class="media">
+<section class={`service-block ${reverse ? 'reverse' : ''}`}>
+  <div class="service-image">
     <slot name="media" />
   </div>
-
-  <div class="content">
+  <div class="service-text">
     <h2>{title}</h2>
     <slot />
   </div>
 </section>
 
 <style>
-.block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+.service-block {
+  display: flex;
   align-items: center;
-  margin: 96px 0;
+  gap: 32px;
+  margin-bottom: 40px;
 }
 
-.block.reverse {
-  direction: rtl;
+.service-block.reverse {
+  flex-direction: row-reverse;
 }
 
-.block.reverse > * {
-  direction: ltr;
-}
-
-.media img {
+.service-image img {
   width: 100%;
+  max-width: 400px;
   border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.content h2 {
-  margin-bottom: 16px;
+.service-text h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+}
+
+.service-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .service-block {
+    flex-direction: column !important;
+    text-align: center;
+  }
 }
 </style>

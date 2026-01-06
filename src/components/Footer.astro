@@ -1,7 +1,7 @@
 ---
 const { lang = "ro" } = Astro.props;
 
-// Text butoane traduse
+// Footer folosește aceleași butoane ca header
 const navButtons = {
   ro: [
     { text: "Despre noi", href: "/ro" },
@@ -18,18 +18,16 @@ const navButtons = {
 };
 ---
 
-<header class="site-header">
-  <div class="container header-container">
-    <div class="logo">
-      <a href={lang === "ro" ? "/ro" : "/en"}>
-        <img src="/logo.png" alt="EURO ASIA EDUCATION" />
-      </a>
+<footer class="site-footer">
+  <div class="container footer-container">
+    <div class="footer-logo">
+      <img src="/logo.png" alt="EURO ASIA EDUCATION" />
     </div>
-
-    <nav class="header-nav">
+    <nav class="footer-nav">
       {navButtons[lang].map(btn => (
         <a href={btn.href}>{btn.text}</a>
       ))}
     </nav>
+    <p class="footer-copy">&copy; {new Date().getFullYear()} EURO ASIA EDUCATION. All rights reserved.</p>
   </div>
-</header>
+</footer>
