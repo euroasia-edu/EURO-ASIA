@@ -1,0 +1,48 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Excursii culturale opționale" reverse>
+ <p> 
+ Pe lângă activitățile culturale standard incluse în proiect, pot fi organizate, la solicitarea grupului, excursii culturale opționale, menite să completeze și să diversifice experiența Erasmus+.
+
+ </p>
+<p>
+Aceste activități permit extinderea programului cultural și adaptarea acestuia la interesele participanților.
+</p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s",
+  ]} />
+</ServiceBlock>
+
+<section class="optional-excursions">
+<h2><p>Exemple de excursii opționale:</p></h2>
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Florența</h3>
+      <p>
+        – Oraș emblematic al Renașterii italiene, recunoscut pentru patrimoniul său artistic și cultural.<br/>
+        Vizita include obiective istorice și culturale de importanță europeană.
+      </p>
+
+      <h3>Bologna</h3>
+      <p>
+        – Oraș universitar cu tradiție academică, cunoscut pentru centrul istoric bine conservat și pentru rolul său în dezvoltarea educației europene.
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Roma</h3>
+      <p>
+        – Capitala Italiei, cu un patrimoniu istoric și cultural de excepție.<br/>
+        Excursia oferă o perspectivă asupra istoriei antice, medievale și moderne a Europei.
+      </p>
+
+      <h3>Milano</h3>
+      <p>
+        – Important centru economic și cultural, recunoscut pentru arhitectura sa, dinamismul urban și influența sa la nivel european.
+      </p>
+    </div>
+  </div>
+</section>

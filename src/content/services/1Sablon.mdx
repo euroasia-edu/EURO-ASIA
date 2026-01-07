@@ -1,0 +1,13 @@
+import ServiceBlock from "../../components/ServiceBlock.astro";
+import ImageSlider from "../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Titlu" reverse>
+ <p> 
+  Text
+ </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+    "poza",
+  ]} />
+</ServiceBlock>

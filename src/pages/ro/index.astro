@@ -2,10 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const about = {
-  title: "Despre EURO ASIA EDUCATION",
-  text: `Suntem dedicați educației internaționale și facilităm schimburi culturale.
-Oferim consultanță, programe de studiu și suport complet pentru studenți.`,
-  image: "/images/about.jpeg", // pui poza ta
+  title: "DESPRE NOI",
+  text: `Suntem pasionați de educația internațională și de experiențele care deschid orizonturi. Facilităm schimburi culturale, programe de studiu și suport complet pentru studenți, asigurând mobilități sigure, confortabile și memorabile.`,
+  text2: `Scopul nostru este ca fiecare student să plece acasă cu noi cunoștințe, prietenii internaționale și amintiri care inspiră. Lucrăm alături de parteneri din România, Italia și Turcia pentru a transforma fiecare mobilitate într-o experiență educațională reală și plină de oportunități.`,
+  image: "/images/about.jpeg",
 };
 ---
 
@@ -17,6 +17,7 @@ Oferim consultanță, programe de studiu și suport complet pentru studenți.`,
       <div class="about-text">
         <h1>{about.title}</h1>
         <p>{about.text}</p>
+        <p>{about.text2}</p>
       </div>
       <div class="about-image">
         <img src={about.image} alt="Despre noi" />

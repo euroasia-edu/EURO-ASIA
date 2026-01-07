@@ -174,7 +174,7 @@ section {
 
 .about-section {
   padding: 80px 20px;
-  background: #f8f8f8;
+  background: #ffffff;
 }
 
 .about-container {
@@ -252,11 +252,16 @@ section {
   margin-left: 20px;
   color: #111;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;           /* bold */
+  text-transform: uppercase;  /* majuscule */
+  letter-spacing: 1px;        /* puțin spațiu între litere */
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .header-nav a:hover {
-  text-decoration: underline;
+  color: var(--accent);       /* folosește accentul definit în :root */
+  text-decoration: underline; /* subliniere la hover */
+  text-underline-offset: 3px; /* offset pentru mai mult stil */
 }
 
 .logo img {
@@ -435,3 +440,75 @@ html, body {
   }
 }
 
+/* =================cazare==================== */
+.accommodation-section {
+  max-width: 1200px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.columns-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.column h3 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.column p {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* textul de final */
+.note {
+  grid-column: 1 / -1; /* ocupa tot randul */
+  font-style: italic;
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .columns-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .columns-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.optional-activities .columns-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .optional-activities .columns-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+.optional-excursions .columns-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* Stilurile globale pentru h3 și p se aplică deja */
+
+/* Responsive pentru mobil */
+@media (max-width: 768px) {
+  .optional-excursions .columns-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
