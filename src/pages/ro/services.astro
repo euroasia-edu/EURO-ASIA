@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import Administrare from "../../content/services/1administrare.mdx";
-import Cazare from "../../content/services/2cazare.mdx";
-import Transport from "../../content/services/3transport.mdx";
-import Instruire from "../../content/services/4instruire.mdx";
-import Activitati from "../../content/services/5activitati.mdx";
+import Administrare from "../../content/services/administrare.mdx";
+import Cazare from "../../content/services/cazare.mdx";
+import Transport from "../../content/services/transport.mdx";
+import Instruire from "../../content/services/instruire.mdx";
+import Activitati from "../../content/services/activitati.mdx";
 
 ---
 
@@ -13,9 +13,11 @@ import Activitati from "../../content/services/5activitati.mdx";
 
   <div class="container">
     <Administrare/>
-    <Cazare/>
-    <Transport/>
     <Instruire/>
+   <Transport/>
+    <Cazare/>
+
+
     <Activitati/>
   </div>
 </BaseLayout>

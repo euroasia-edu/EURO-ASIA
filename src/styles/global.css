@@ -6,6 +6,11 @@
   --max-width: 1200px;
 }
 
+.content p {
+  max-width: 600px; /* sau cât consideri că arată bine */
+}
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,7 +38,6 @@ a {
 section {
   padding: 10px 0;
 }
-
 /* ================= Slider ================= */
 
 .slider.fullscreen {
@@ -47,19 +51,34 @@ section {
   border-radius: 12px;
   width: 100%;
   max-width: 520px;
-  aspect-ratio: 14 / 9;
+  aspect-ratio: 16 / 9;
 }
 
+/* Mobile fix */
+@media (max-width: 768px) {
+  .slider {
+    max-width: 100%;
+    max-height: 300px; /* ajustează după cum vrei */
+    border-radius: 10;
+  }
+
+  .track img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 .track {
   display: flex;
   height: 100%;
+  width: 100%;          /* Fixați lățimea totală */
   transition: transform 0.5s ease;
 }
 
 .track img {
-  width: 100%;
+  flex: 0 0 100%;       /* Fiecare imagine ocupă exact 100% din container */
   height: 100%;
-  object-fit: cover;  /* fill complet */
+  object-fit: cover;    /* umple complet spațiul */
   object-position: center;
   user-select: none;
   display: block;
@@ -80,6 +99,7 @@ section {
 
 .slider .prev { left: 16px; }
 .slider .next { right: 16px; }
+
 
 /* ================= Galerie ================= */
 
@@ -148,6 +168,8 @@ section {
   font-weight: bold;
 }
 
+
+
 /* ================= About ================= */
 
 .about-section {
@@ -204,9 +226,17 @@ section {
 /* ================= Header ================= */
 
 .site-header {
-  background: #fff;
-  padding: 20px 0;
-  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+ background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  transition: background 0.25s ease, backdrop-filter 0.25s ease;
 }
 
 .header-container {
@@ -215,6 +245,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 80px;
 }
 
 .header-nav a {
@@ -231,6 +262,15 @@ section {
 .logo img {
   height: 50px;
 }
+
+.footer-logo a {
+  display: inline-block;
+}
+
+.footer-logo img {
+  cursor: pointer;
+}
+
 
 /* ================= Footer ================= */
 
@@ -273,6 +313,23 @@ section {
   color: #ccc;
 }
 
+.footer-policy-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px; /* spațiu față de nav */
+}
+
+.footer-policy {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.footer-policy:hover {
+  text-decoration: underline;
+}
+
+
+
 /* Responsive Footer */
 @media (max-width: 768px) {
   .header-container,
@@ -302,6 +359,7 @@ html, body {
 
 .site-main {
   flex: 1;
+  
 }
 
 /* ==========Contact========== */
@@ -376,3 +434,4 @@ html, body {
     flex: 1 1 100%;
   }
 }
+

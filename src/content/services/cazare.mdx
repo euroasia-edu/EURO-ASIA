@@ -1,0 +1,61 @@
+import ServiceBlock from "../../components/ServiceBlock.astro";
+import ImageSlider from "../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Cazare" >
+  <p>
+    Oferim soluții de cazare atent selecționate, adaptate standardelor programelor Erasmus+, pentru a asigura confort, siguranță și o experiență plăcută tuturor participanților.
+  </p>
+
+  <p>
+    Cazarea este asigurată în structuri de 3–4 stele, verificate și colaborate constant, situate în zone bine conectate la locațiile de formare sau activități.
+  </p>
+
+
+
+
+  <ImageSlider slot="media" client:visible
+    images={[
+      "https://www.hotelchristianrimini.com/source/hotel-3.jpg",
+      "https://www.veladorohotel.it/source/slide-home-1.jpg?v=1764847964.jpg"
+    ]} />
+</ServiceBlock>
+
+
+  <h3>Elevi / Participanți</h3>
+  <ul>
+    <li>Cazare în camere multiple (3–4 persoane), în funcție de nevoile grupului</li>
+    <li>
+      <span>Sistemare flexibilă, realizată în funcție de:</span>
+      <ul>
+        <li>vârstă</li>
+        <li>gen</li>
+        <li>cerințe speciale</li>
+      </ul>
+    </li>
+    <li>
+      <span>3 mese pe zi (mic dejun, prânz și cină), adaptate și pentru:</span>
+      <ul>
+        <li>diete speciale</li>
+        <li>restricții alimentare</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Profesori / Acompaniatori</h3>
+  <ul>
+    <li>Cazare în camere single</li>
+    <li>Aceleași standarde de confort și servicii</li>
+    <li>Asigurarea intimității și a condițiilor optime pentru odihnă și coordonare</li>
+  </ul>
+
+  <h3>Servicii incluse</h3>
+  <ul>
+    <li>Curățenie regulată</li>
+    <li>Wi-Fi</li>
+    <li>Asistență pe toată durata șederii</li>
+    <li>Suport logistic și intervenție rapidă în caz de necesitate</li>
+  </ul>
+
+  <p>
+    Toate soluțiile de cazare sunt alese astfel încât să respecte cerințele Erasmus+ și să contribuie la o experiență educațională sigură și de calitate, atât pentru elevi, cât și pentru cadrele didactice.
+  </p>
