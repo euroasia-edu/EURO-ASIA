@@ -1,5 +1,4 @@
 ---
-// Props
 const { lang = "ro" } = Astro.props;
 
 import HeaderClient from "./HeaderClient.jsx";
@@ -21,4 +20,3 @@ const navButtons = {
 ---
 
 <HeaderClient client:load navButtons={navButtons} lang={lang} currentLang={lang} />
-
