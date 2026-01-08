@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import "../styles/header.css";
+import "./header.css";
 
 export default function HeaderClient({ navButtons = [], lang = "ro", currentLang = "ro" }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +35,46 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentLang
         <div className="left-controls">
           <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
         </div>
+
+        {/* Logo */}
+        <div className="logo">
+          <a href={currentLang === "ro" ? "/ro" : "/en"}>
+            <img src="/logo.png" alt="EURO ASIA EDUCATION" />
+          </a>
+        </div>
+
+        {/* Desktop nav */}
+        <nav className="header-nav" ref={menuDesktopRef}>
+          {navList.map(btn => (
+            <a key={btn.href} href={btn.href}>{btn.text}</a>
+          ))}
+        </nav>
+
+        {/* Language switcher (temporar dezactivat) */}
+        <div className="lang-switcher" ref={langRef}>
+          <div className="current-lang">{currentLang.toUpperCase()}</div>
+        </div>
+
+        {/* Mobile dropdown */}
+        <div
+          className={`mobile-dropdown ${menuOpen ? "open" : ""}`}
+          ref={menuMobileRef}
+          style={{ pointerEvents: menuOpen ? "auto" : "none" }}
+        >
+          {navList.map(btn => (
+            <a
+              key={btn.href}
+              href={btn.href}
+              onClick={() => setMenuOpen(false)}
+            >
+              {btn.text}
+            </a>
+          ))}
+        </div>
+      </div>
+    </header>
+  );
+}        </div>
 
         {/* Logo */}
         <div className="logo">
