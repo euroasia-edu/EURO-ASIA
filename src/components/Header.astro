@@ -1,22 +1,22 @@
 ---
-const { lang = "ro" } = Astro.props;
-
 import HeaderClient from "./HeaderClient.jsx";
+
+const { lang = "ro" } = Astro.props;
 
 const navButtons = {
   ro: [
     { text: "Acasa", href: "/ro" },
     { text: "Servicii", href: "/ro/services" },
     { text: "Galerie", href: "/ro/gallery" },
-    { text: "Contact", href: "/ro/contact" }
+    { text: "Contact", href: "/ro/contact" },
   ],
   en: [
     { text: "About us", href: "/en" },
     { text: "Services", href: "/en/services" },
     { text: "Gallery", href: "/en/gallery" },
-    { text: "Contact", href: "/en/contact" }
-  ]
+    { text: "Contact", href: "/en/contact" },
+  ],
 };
 ---
 
-<HeaderClient client:load navButtons={navButtons} lang={lang} currentLang={lang} />
+<HeaderClient client:load navButtons={navButtons} lang={lang} />
