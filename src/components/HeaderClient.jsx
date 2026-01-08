@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import "../styles/header.css"
 
 export default function HeaderClient({ navButtons = [], lang = "ro", currentLang = "ro" }) {
   const [menuOpen, setMenuOpen] = useState(false);
