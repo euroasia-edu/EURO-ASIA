@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 
 export default function GalleryModal({ images, startIndex, onClose }) {
   const [index, setIndex] = useState(startIndex);
-  const [animating, setAnimating] = useState(false);
+  const trackRef = useRef(null);
   const startX = useRef(null);
 
   useEffect(() => {
@@ -16,13 +16,11 @@ export default function GalleryModal({ images, startIndex, onClose }) {
   }, [index]);
 
   const prev = () => {
-    setAnimating(true);
-    setTimeout(() => setIndex((index - 1 + images.length) % images.length), 150);
+    setIndex((index - 1 + images.length) % images.length);
   };
 
   const next = () => {
-    setAnimating(true);
-    setTimeout(() => setIndex((index + 1) % images.length), 150);
+    setIndex((index + 1) % images.length);
   };
 
   const onTouchStart = (e) => {
@@ -45,13 +43,21 @@ export default function GalleryModal({ images, startIndex, onClose }) {
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
-        <img
-          key={index}
-          src={images[index]}
-          className={`fade ${animating ? "fade-out" : "fade-in"}`}
-          onAnimationEnd={() => setAnimating(false)}
-        />
-        <div className="indicator">{index + 1} / {images.length}</div>
+        <div className="gallery-slider">
+          <div
+            className="gallery-track"
+            ref={trackRef}
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {images.map((src, i) => (
+              <img key={i} src={src} />
+            ))}
+          </div>
+        </div>
+
+        <div className="indicator">
+          {index + 1} / {images.length}
+        </div>
 
         <button className="prev" onClick={prev}>‹</button>
         <button className="next" onClick={next}>›</button>

@@ -1,0 +1,21 @@
+import ServiceBlock from "../../components/ServiceBlock.astro";
+import ImageSlider from "../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Organizare și condiții" reverse>
+ <p> 
+ ### Excursii culturale opționale
+
+Excursiile culturale opționale:
+
+– sunt organizate la cerere, în funcție de disponibilitate  
+– pot fi adaptate duratei mobilității  
+– sunt planificate în conformitate cu obiectivele educaționale ale proiectului  
+– presupun costuri suplimentare, stabilite transparent înainte de confirmare
+
+ </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s",
+  ]} />
+</ServiceBlock>

@@ -1,7 +1,9 @@
 ---
+// Props
 const { lang = "ro" } = Astro.props;
 
-// Text butoane traduse
+import HeaderClient from "./HeaderClient.jsx";
+
 const navButtons = {
   ro: [
     { text: "Acasa", href: "/ro" },
@@ -18,18 +20,5 @@ const navButtons = {
 };
 ---
 
-<header class="site-header">
-  <div class="container header-container">
-    <div class="logo">
-      <a href={lang === "ro" ? "/ro" : "/en"}>
-        <img src="/logo.png" alt="EURO ASIA EDUCATION" />
-      </a>
-    </div>
+<HeaderClient client:load navButtons={navButtons} lang={lang} currentLang={lang} />
 
-    <nav class="header-nav">
-      {navButtons[lang].map(btn => (
-        <a href={btn.href}>{btn.text}</a>
-      ))}
-    </nav>
-  </div>
-</header>
