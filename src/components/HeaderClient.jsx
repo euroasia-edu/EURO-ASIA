@@ -69,11 +69,17 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentLang
         </div>
 
         {/* ================= Mobile dropdown ================= */}
-        <div className={`mobile-dropdown ${menuOpen ? "open" : ""}`} ref={menuMobileRef}>
-          {navList.map(btn => (
-            <a key={btn.href} href={btn.href} onClick={() => setMenuOpen(false)}>{btn.text}</a>
-          ))}
-        </div>
+<div className={`mobile-dropdown ${menuOpen ? "open" : ""}`} ref={menuMobileRef}>
+  {navList.map(btn => (
+    <a
+      key={btn.href}
+      href={btn.href}
+      onClick={() => setMenuOpen(false)} // doar închide meniul
+    >
+      {btn.text}
+    </a>
+  ))}
+</div>
 
       </div>
     </header>
