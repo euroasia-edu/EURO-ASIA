@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import "./header.css";
 
 export default function HeaderClient({ navButtons = [], lang = "ro", currentLang = "ro" }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,12 +25,14 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentLang
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Siguranță pentru navButtons
   const navList = Array.isArray(navButtons) ? navButtons : navButtons[lang] || [];
 
   return (
     <header className="site-header">
       <div className="header-container">
-        {/* Mobile menu button */}
+
+        {/* ================= Mobile controls ================= */}
         <div className="left-controls">
           <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
         </div>
@@ -43,67 +44,36 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentLang
           </a>
         </div>
 
-        {/* Desktop nav */}
+        {/* ================= Desktop nav ================= */}
         <nav className="header-nav" ref={menuDesktopRef}>
           {navList.map(btn => (
             <a key={btn.href} href={btn.href}>{btn.text}</a>
           ))}
         </nav>
 
-        {/* Language switcher (temporar dezactivat) */}
+        {/* ================= Lang switcher (temporar dezactivat) ================= */}
         <div className="lang-switcher" ref={langRef}>
-          <div className="current-lang">{currentLang.toUpperCase()}</div>
-        </div>
-
-        {/* Mobile dropdown */}
-        <div
-          className={`mobile-dropdown ${menuOpen ? "open" : ""}`}
-          ref={menuMobileRef}
-          style={{ pointerEvents: menuOpen ? "auto" : "none" }}
-        >
-          {navList.map(btn => (
-            <a
-              key={btn.href}
-              href={btn.href}
-              onClick={() => setMenuOpen(false)}
-            >
-              {btn.text}
-            </a>
-          ))}
-        </div>
-      </div>
-    </header>
-  );
-}        </div>
-
-        {/* Logo */}
-        <div className="logo">
-          <a href={currentLang === "ro" ? "/ro" : "/en"}>
-            <img src="/logo.png" alt="EURO ASIA EDUCATION" />
-          </a>
-        </div>
-
-        {/* Desktop nav */}
-        <nav className="header-nav" ref={menuDesktopRef}>
-          {navList.map(btn => (
-            <a key={btn.href} href={btn.href}>{btn.text}</a>
-          ))}
-        </nav>
-
-        {/* Language switcher – DEZACTIVAT temporar */}
-        <div className="lang-switcher" ref={langRef}>
-          <div className="current-lang">
+          <div className="current-lang" onClick={() => setLangOpen(!langOpen)}>
             {currentLang.toUpperCase()}
           </div>
-          {/* Dropdown dezactivat */}
+
+          {/*
+          <div className={`lang-dropdown ${langOpen ? "open" : ""}`}>
+            {["ro","en"].filter(l => l !== currentLang).map((l) => {
+              const href = l === "ro" ? "/ro" : "/en";
+              return <a key={l} href={href}>{l.toUpperCase()}</a>;
+            })}
+          </div>
+          */}
         </div>
 
-        {/* Mobile dropdown */}
+        {/* ================= Mobile dropdown ================= */}
         <div className={`mobile-dropdown ${menuOpen ? "open" : ""}`} ref={menuMobileRef}>
           {navList.map(btn => (
             <a key={btn.href} href={btn.href} onClick={() => setMenuOpen(false)}>{btn.text}</a>
           ))}
         </div>
+
       </div>
     </header>
   );
