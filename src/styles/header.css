@@ -1,5 +1,4 @@
 /* ================= HEADER ================= */
-
 .site-header {
   position: sticky;
   top: 0;
@@ -14,10 +13,8 @@
   height: 80px;
   margin: 0 auto;
   padding: 0 16px;
-
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 16px;
 }
 
@@ -31,6 +28,7 @@
   margin-left: auto;
   display: flex;
   gap: 24px;
+  align-items: center;
 }
 
 .header-nav a {
@@ -55,12 +53,23 @@
   color: #fff;
 }
 
-.mobile-dropdown .lang-switcher {
-  display: block;
-  margin: 0.5rem 0;
+/* LOGO + SWITCHER WRAPPER */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* MOBILE */
+/* DESKTOP / MOBILE SWITCHERS */
+.desktop-lang-switcher {
+  display: block;
+}
+
+.mobile-lang-switcher {
+  display: none;
+}
+
+/* ================= MOBILE ================= */
 .menu-btn {
   display: none;
   background: none;
@@ -69,26 +78,34 @@
   cursor: pointer;
 }
 
+/* ================= MOBILE DROPDOWN ================= */
 .mobile-dropdown {
   position: absolute;
   top: 100%; /* fix sub header */
   left: 0;
   width: 100%;
-  background: rgba(255,255,255,0.95); /* mai opac, ca să nu se vadă header-ul pe fundal */
-  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.877); /* semi-transparent pentru blur */
+  backdrop-filter: blur(14px); /* blur vizibil */
   display: flex;
   flex-direction: column;
- box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-5px); /* mic offset de sus, dar sub header */
-  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  /* animatie open */
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+
+  z-index: 999;
 }
 
 .mobile-dropdown.open {
+  transform: scaleY(1);
   opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0); 
+}
+
+
 
 .mobile-dropdown a {
   padding: 14px 20px;
@@ -104,50 +121,23 @@
     font-size: 26px;
     width: 44px;
     height: 44px;
-    z-index: 9999;
-  }
-
-  .header-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  /* logo centru */
-  .logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0;
-    z-index: 2;
-  }
-
-  /* switch limbă – dreapta, lângă meniu */
-  .mobile-lang-switcher {
-    display: block;
-    z-index: 3;
-    margin-left: auto;
+    z-index: 1001;
   }
 
   .header-nav {
-    display: none; /* ascuns pe mobil */
+    display: none;
   }
 
-  .mobile-dropdown {
-    display: flex;
-    z-index: 1500;
+  /* logo + switcher pe mobil */
+  .logo-wrapper {
+    margin: 0 auto;
   }
-}
 
-/* desktop lang switcher */
-.desktop-lang-switcher {
-  display: block;
-}
-
-@media (max-width: 768px) {
   .desktop-lang-switcher {
-    display: none; /* ascunde switcher desktop pe mobil */
+    display: none;
+  }
+
+  .mobile-lang-switcher {
+    display: block;
   }
 }
