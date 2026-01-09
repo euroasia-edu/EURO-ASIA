@@ -35,6 +35,7 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentPath
     >
       ☰
     </button>
+<div className={`mobile-overlay ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(false)}></div>
 
     {/* LOGO + LANGUAGE SWITCHER */}
     <div className="logo-wrapper">
@@ -61,17 +62,17 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentPath
       </div>
     </nav>
 
-    {/* MOBILE DROPDOWN */}
-    <div
-      ref={menuRef}
-      className={`mobile-dropdown ${menuOpen ? "open" : ""}`}
-    >
-      {navList.map(btn => (
-        <a key={btn.href} href={btn.href} onClick={() => setMenuOpen(false)}>
-          {btn.text}
-        </a>
-      ))}
-    </div>
+{/* MOBILE DROPDOWN */}
+<div
+  ref={menuRef}
+  className={`mobile-dropdown ${menuOpen ? "open" : ""}`}
+>
+  {navList.map(btn => (
+    <a key={btn.href} href={btn.href} onClick={() => setMenuOpen(false)}>
+      {btn.text}
+    </a>
+  ))}
+</div>
 
   </div>
 </header>

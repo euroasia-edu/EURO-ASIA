@@ -78,38 +78,57 @@
   cursor: pointer;
 }
 
-/* ================= MOBILE DROPDOWN ================= */
+/* ================= MOBILE OVERLAY ================= */
+.mobile-overlay {
+  position: fixed;
+  top: 80px; /* începem chiar sub header */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px); /* restul paginii */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 998; /* sub dropdown care are 999 */
+    display: none;
+}
+
+.mobile-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* MOBILE DROPDOWN */
 .mobile-dropdown {
   position: absolute;
   top: 100%; /* sub header */
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.7); 
-  backdrop-filter: blur(14px); 
+  background: rgba(255, 255, 255, 0.836); /* semi-transparent */
+  backdrop-filter: blur(14px); /* blur vizibil */
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   opacity: 0;
   pointer-events: none;
-
-
-  transform: translateY(-10px);
+  transform: scaleY(0);
+  transform-origin: top;
   transition: transform 0.25s ease, opacity 0.25s ease;
-
   z-index: 999;
 }
 
 .mobile-dropdown.open {
+  transform: scaleY(1);
   opacity: 1;
-  pointer-events: auto; 
-  transform: translateY(0); 
+  pointer-events: auto;
 }
-
-
 
 .mobile-dropdown a {
   padding: 14px 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 /* RESPONSIVE */
