@@ -1,0 +1,54 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Accommodation">
+  <p>
+    We offer carefully selected accommodation solutions, tailored to the standards of Erasmus+ programs, ensuring comfort, safety, and an enjoyable experience for all participants.
+  </p>
+
+  <p>
+    Accommodation is provided in 3–4 star facilities, regularly checked and collaborated with, located in areas well-connected to training or activity locations.
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+      "https://www.hotelchristianrimini.com/source/hotel-3.jpg",
+      "https://www.veladorohotel.it/source/slide-home-1.jpg?v=1764847964.jpg"
+    ]} />
+</ServiceBlock>
+
+<section class="accommodation-section">
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Students / Participants</h3>
+      <p>
+        – Accommodation in shared rooms (3–4 people), depending on group needs<br/>
+        – Flexible placement based on: age, gender, special requirements<br/>
+        – 3 meals per day (breakfast, lunch, and dinner), adapted also for special diets and dietary restrictions
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Teachers / Accompanying Staff</h3>
+      <p>
+        – Accommodation in single rooms<br/>
+        – Same standards of comfort and services<br/>
+        – Ensuring privacy and optimal conditions for rest and coordination
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Included Services</h3>
+      <p>
+        – Regular cleaning<br/>
+        – Wi-Fi<br/>
+        – Assistance throughout the stay<br/>
+        – Logistic support and rapid intervention if needed
+      </p>
+    </div>
+  </div>
+
+  <p class="note">
+    All accommodation solutions are chosen to comply with Erasmus+ requirements and contribute to a safe and high-quality educational experience for both students and teaching staff.
+  </p>
+</section>

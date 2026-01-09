@@ -1,0 +1,47 @@
+import ServiceBlock from "../../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Optional Cultural Excursions" reverse>
+  <p> 
+    In addition to the standard cultural activities included in the project, optional cultural excursions can be organized upon the group's request, aimed at enriching and diversifying the Erasmus+ experience.
+  </p>
+  <p>
+    These activities allow for the expansion of the cultural program and its adaptation to the participants' interests.
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s",
+    ]} />
+</ServiceBlock>
+
+<section class="optional-excursions">
+  <h2><p>Examples of Optional Excursions:</p></h2>
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Florence</h3>
+      <p>
+        – Iconic city of the Italian Renaissance, renowned for its artistic and cultural heritage.<br/>
+        The visit includes historical and cultural landmarks of European significance.
+      </p>
+
+      <h3>Bologna</h3>
+      <p>
+        – University city with a long academic tradition, known for its well-preserved historic center and its role in the development of European education.
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Rome</h3>
+      <p>
+        – Capital of Italy, with exceptional historical and cultural heritage.<br/>
+        The excursion offers insights into Europe's ancient, medieval, and modern history.
+      </p>
+
+      <h3>Milan</h3>
+      <p>
+        – Important economic and cultural hub, recognized for its architecture, urban dynamism, and European influence.
+      </p>
+    </div>
+  </div>
+</section>

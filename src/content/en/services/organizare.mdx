@@ -1,0 +1,20 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Organization and Conditions" reverse>
+  <p>
+    ### Optional Cultural Excursions
+
+    Optional cultural excursions:
+
+    – are organized upon request, depending on availability  
+    – can be adapted to the duration of the mobility  
+    – are planned in accordance with the educational objectives of the project  
+    – involve additional costs, transparently set before confirmation
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s",
+    ]} />
+</ServiceBlock>

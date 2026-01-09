@@ -1,0 +1,24 @@
+---
+// Props: path-ul curent (din URL)
+const { currentPath } = Astro.props;
+
+// Detectăm limba curentă din path
+const isRO = currentPath.startsWith('/ro');
+const targetLang = isRO ? 'en' : 'ro';
+
+// Construim path-ul pentru limba țintă
+let targetPath = currentPath;
+
+// Dacă suntem în /ro sau /en, înlocuim prefixul
+if (isRO) {
+  targetPath = currentPath.replace(/^\/ro/, '/en');
+} else if (currentPath.startsWith('/en')) {
+  targetPath = currentPath.replace(/^\/en/, '/ro');
+} else {
+  // fallback dacă nu are prefix
+  targetPath = '/' + targetLang + currentPath;
+}
+---
+<a href={targetPath} class="language-switcher">
+  {targetLang.toUpperCase()}
+</a>

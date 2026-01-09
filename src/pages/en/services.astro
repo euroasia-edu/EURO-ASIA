@@ -1,24 +1,26 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import Administrare from "../../content/services/administrare.mdx";
-import Cazare from "../../content/services/cazare.mdx";
-import Transport from "../../content/services/transport.mdx";
-import Instruire from "../../content/services/instruire.mdx";
-import Activitati from "../../content/services/activitati/activitati.mdx";
-import ARimini from "../../content/services/activitati/rimini.mdx";
-import ASanMarino from "../../content/services/activitati/sanmarino.mdx";
-import AVenetia from "../../content/services/activitati/venetia.mdx";
-import AOptional from "../../content/services/activitati/optional.mdx";
-import AExcursii from "../../content/services/activitati/excursii.mdx";
-import Organizare from "../../content/services/organizare.mdx";
+// versiune engleză a MDX-urilor
+import Administrare from "../../content/en/services/administrare.mdx";
+import Cazare from "../../content/en/services/cazare.mdx";
+import Transport from "../../content/en/services/transport.mdx";
+import Instruire from "../../content/en/services/instruire.mdx";
+import Activitati from "../../content/en/services/activitati/activitati.mdx";
+import ARimini from "../../content/en/services/activitati/rimini.mdx";
+import ASanMarino from "../../content/en/services/activitati/sanmarino.mdx";
+import AVenetia from "../../content/en/services/activitati/venetia.mdx";
+import AOptional from "../../content/en/services/activitati/optional.mdx";
+import AExcursii from "../../content/en/services/activitati/excursii.mdx";
+import Organizare from "../../content/en/services/organizare.mdx";
 
 const lang = "en";
+const currentPath = Astro.url.pathname;
 ---
 
-<BaseLayout title="Services | EURO ASIA EDUCATION">
-
-  <div class="container">
+<BaseLayout lang={lang} currentPath={currentPath}>
+  <section class="services-section">
+    <div class="container">
     <Administrare/>
     <Instruire/>
    <Transport/>
@@ -30,5 +32,6 @@ const lang = "en";
     <AOptional/>
     <AExcursii/>
     <Organizare/>
-  </div>
+    </div>
+  </section>
 </BaseLayout>

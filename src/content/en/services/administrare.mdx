@@ -1,0 +1,14 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Administration and Management" reverse>
+  <p>
+    Organization of the training program (internships for students or study visits for teachers and professionals),
+    monitoring, guidance, evaluation, and certification, including the Europass Mobility Certificate.
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+      "https://media.unesco.org/sites/default/files/webform/ed3002/AT5GP319_Pe3k_2.jpg",
+    ]} />
+</ServiceBlock>

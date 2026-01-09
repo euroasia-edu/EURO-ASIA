@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import GalleryGrid from "../../components/GalleryGrid.jsx";
-
+const lang = "en";
 const images = [
   "https://i.imgur.com/I24Lcne.jpeg",
   "https://i.imgur.com/pcc6DUa.jpeg",
@@ -17,34 +17,32 @@ const images = [
   "https://i.imgur.com/uyfYGHB.jpeg",
   "https://i.imgur.com/6ybCFoT.jpeg",
   "https://i.imgur.com/pFdYrED.jpeg",
-  " https://i.imgur.com/qVarTYR.jpeg ",
-  " https://i.imgur.com/T63nevZ.jpeg ",
-  " https://i.imgur.com/JL6lBWz.jpeg ",
-  " https://i.imgur.com/aBkyAa9.jpeg ",
-  " https://i.imgur.com/JuLqmN6.jpeg ",
-  " https://i.imgur.com/Ceg1omw.jpeg ",
-  " https://i.imgur.com/AaNjEoA.jpeg ",
-  " https://i.imgur.com/TZ8U8l4.jpeg ",
-  " https://i.imgur.com/NUhqa8l.jpeg ",
-  " https://i.imgur.com/nZMeiq1.jpeg ",
-  " https://i.imgur.com/VHZ9LuD.jpeg ",
-  " https://i.imgur.com/Zx1O22b.jpeg ",
-  " https://i.imgur.com/gMBkhRy.jpeg ",
-  " https://i.imgur.com/ZGr2Onw.jpeg ",
-  " https://i.imgur.com/8LGRuCu.jpeg ",
-  " https://i.imgur.com/txECCMB.jpeg ",
-  " https://i.imgur.com/biYa8JW.jpeg ",
-  " https://i.imgur.com/knH2BNF.jpeg ",
-  " https://i.imgur.com/61qDm74.jpeg "
+  "https://i.imgur.com/qVarTYR.jpeg",
+  "https://i.imgur.com/T63nevZ.jpeg",
+  "https://i.imgur.com/JL6lBWz.jpeg",
+  "https://i.imgur.com/aBkyAa9.jpeg",
+  "https://i.imgur.com/JuLqmN6.jpeg",
+  "https://i.imgur.com/Ceg1omw.jpeg",
+  "https://i.imgur.com/AaNjEoA.jpeg",
+  "https://i.imgur.com/TZ8U8l4.jpeg",
+  "https://i.imgur.com/NUhqa8l.jpeg",
+  "https://i.imgur.com/nZMeiq1.jpeg",
+  "https://i.imgur.com/VHZ9LuD.jpeg",
+  "https://i.imgur.com/Zx1O22b.jpeg",
+  "https://i.imgur.com/gMBkhRy.jpeg",
+  "https://i.imgur.com/ZGr2Onw.jpeg",
+  "https://i.imgur.com/8LGRuCu.jpeg",
+  "https://i.imgur.com/txECCMB.jpeg",
+  "https://i.imgur.com/biYa8JW.jpeg",
+  "https://i.imgur.com/knH2BNF.jpeg",
+  "https://i.imgur.com/61qDm74.jpeg"
 ];
 ---
 
-<BaseLayout title="Gallery | EURO ASIA EDUCATION">
-
+<BaseLayout title="Galerie | EURO ASIA EDUCATION" lang={lang}>
   <section>
     <div class="container">
       <GalleryGrid client:load images={images} />
     </div>
   </section>
 </BaseLayout>
-    

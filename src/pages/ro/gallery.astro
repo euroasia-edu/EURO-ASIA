@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import GalleryGrid from "../../components/GalleryGrid.jsx";
-
+const lang = "ro";
 const images = [
   "https://i.imgur.com/I24Lcne.jpeg",
   "https://i.imgur.com/pcc6DUa.jpeg",
@@ -39,7 +39,7 @@ const images = [
 ];
 ---
 
-<BaseLayout title="Galerie | EURO ASIA EDUCATION">
+<BaseLayout title="Galerie | EURO ASIA EDUCATION" lang={lang}>
 
   <section>
     <div class="container">

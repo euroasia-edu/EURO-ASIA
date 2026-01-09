@@ -41,22 +41,27 @@
 
 /* SWITCHER (DEZACTIVAT) */
 .lang-switcher {
-  margin-left: 16px;
-  padding: 6px 12px;
-  border-radius: 6px;
-<<<<<<< HEAD
-  background: rgba(255,255,255,0.6);
-=======
-  background: rgba(255, 255, 255, 0.192);
->>>>>>> 2d6783f (	modified:   src/components/Footer.astro)
-  font-weight: 600;
-  font-size: 0.75rem;
+  margin-left: 1rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
-.lang-switcher.disabled {
-  opacity: 0.4;
-  pointer-events: none;
+.lang-switcher:hover {
+  background-color: #333;
+  color: #fff;
 }
+
+.mobile-dropdown .lang-switcher {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+
 
 /* MOBILE */
 .menu-btn {

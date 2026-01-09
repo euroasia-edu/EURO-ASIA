@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import "../styles/header.css";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-export default function HeaderClient({ navButtons = [], lang = "ro" }) {
+export default function HeaderClient({ navButtons = [], lang = "ro", currentPath = "/" }) {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const menuBtnRef = useRef(null);
   const menuRef = useRef(null);
 
-  // click în afara meniului => închide
   useEffect(() => {
     const onClick = (e) => {
       if (
@@ -18,7 +17,6 @@ export default function HeaderClient({ navButtons = [], lang = "ro" }) {
         setMenuOpen(false);
       }
     };
-
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
   }, [menuOpen]);
@@ -49,20 +47,12 @@ export default function HeaderClient({ navButtons = [], lang = "ro" }) {
         {/* DESKTOP NAV */}
         <nav className="header-nav">
           {navList.map(btn => (
-            <a key={btn.href} href={btn.href}>
-              {btn.text}
-            </a>
+            <a key={btn.href} href={btn.href}>{btn.text}</a>
           ))}
+
+          {/* SWITCHER DESKTOP */}
+          <LanguageSwitcher lang={lang} currentPath={currentPath} />
         </nav>
-
-        {/* SWITCHER — DEZACTIVAT TEMPORAR */}
-
-<a
-  className="lang-switcher"
-  href={lang === "ro" ? "/en" : "/ro"}
->
-  {lang.toUpperCase()}
-</a>
 
         {/* MOBILE DROPDOWN */}
         <div
@@ -70,14 +60,13 @@ export default function HeaderClient({ navButtons = [], lang = "ro" }) {
           className={`mobile-dropdown ${menuOpen ? "open" : ""}`}
         >
           {navList.map(btn => (
-            <a
-              key={btn.href}
-              href={btn.href}
-              onClick={() => setMenuOpen(false)}
-            >
+            <a key={btn.href} href={btn.href} onClick={() => setMenuOpen(false)}>
               {btn.text}
             </a>
           ))}
+
+          {/* SWITCHER MOBILE */}
+          <LanguageSwitcher lang={lang} currentPath={currentPath} />
         </div>
 
       </div>

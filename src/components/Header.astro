@@ -1,5 +1,5 @@
 ---
-import HeaderClient from "./HeaderClient.jsx";
+import HeaderClient from "../components/HeaderClient.jsx";
 
 const { lang = "ro" } = Astro.props;
 
@@ -17,6 +17,8 @@ const navButtons = {
     { text: "Contact", href: "/en/contact" },
   ],
 };
+
+const currentPath = Astro.url.pathname;
 ---
 
-<HeaderClient client:load navButtons={navButtons} lang={lang} />
+<HeaderClient navButtons={navButtons} lang={lang} currentPath={currentPath} client:load />

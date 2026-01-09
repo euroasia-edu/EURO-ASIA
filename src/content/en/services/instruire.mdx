@@ -1,0 +1,13 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Pedagogical, Linguistic, and Cultural Training">
+  <p>
+    Pedagogical, Linguistic and Cultural Training (e.g. Italian Language Course)
+  </p>
+
+  <ImageSlider slot="media" client:visible
+    images={[
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s",
+    ]} />
+</ServiceBlock>
