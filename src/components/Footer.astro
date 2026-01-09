@@ -1,4 +1,4 @@
----
+--- 
 const { lang = "ro" } = Astro.props;
 
 const footerNav = {
@@ -13,35 +13,34 @@ const footerNav = {
     { text: "Contact", href: "/en/contact" }
   ]
 };
+
+function handleLangChange(event) {
+  const newLang = event.target.value;
+  // păstrăm partea de path după limba curentă
+  const pathParts = window.location.pathname.split('/');
+  if (['ro', 'en'].includes(pathParts[1])) {
+    pathParts[1] = newLang; // înlocuim limba
+  } else {
+    pathParts.unshift('', newLang); // dacă nu e limba în URL, adăugăm la început
+  }
+  const newPath = pathParts.join('/') || '/';
+  window.location.href = newPath;
+}
 ---
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-left">
-      <a href="/">
-        <img
-          src="/logo.png"
-          alt="EURO ASIA EDUCATION"
-          class="footer-logo-desktop"
-        />
-        <img
-          src="/favicon/android-chrome-192x192.png"
-          alt="EURO ASIA EDUCATION"
-          class="footer-logo-mobile"
-        />
+      <a href={`/${lang}`}>
+        <img src="/logo.png" alt="EURO ASIA EDUCATION" class="footer-logo-desktop" />
+        <img src="/favicon/android-chrome-192x192.png" alt="EURO ASIA EDUCATION" class="footer-logo-mobile" />
       </a>
     </div>
-
-    <nav class="footer-center">
-      {footerNav[lang].map(link => (
-        <a href={link.href}>{link.text}</a>
-      ))}
-    </nav>
 
     <div class="footer-right">
       <label htmlFor="language-select">🌐</label>
       <select
         id="language-select"
-        onChange={(e) => window.location.href = `/${e.target.value}`}
+        onChange={handleLangChange}
         value={lang}
       >
         <option value="ro">RO</option>
@@ -49,11 +48,17 @@ const footerNav = {
       </select>
     </div>
   </div>
-    <div class="footer-policy-wrapper">
-      <a href=../privacy class="footer-policy">
-        Privacy Policy
-      </a>
-    </div>
+
+  <nav class="footer-center">
+    {footerNav[lang].map(link => (
+      <a href={link.href}>{link.text}</a>
+    ))}
+  </nav>
+
+  <div class="footer-policy-wrapper">
+    <a href={`/${lang}/privacy`} class="footer-policy">Privacy Policy</a>
+  </div>
+
   <div class="footer-copy">
     &copy; {new Date().getFullYear()} EURO ASIA EDUCATION. Toate drepturile rezervate.
   </div>

@@ -56,10 +56,21 @@ export default function HeaderClient({ navButtons = [], lang = "ro" }) {
         </nav>
 
         {/* SWITCHER — DEZACTIVAT TEMPORAR */}
+<<<<<<< HEAD
         <div className="lang-switcher disabled">
           {lang.toUpperCase()}
         </div>
 
+=======
+<a
+  className="lang-switcher"
+  href={lang === "ro" ? "/en" : "/ro"}
+>
+  {lang.toUpperCase()}
+</a>
+
+
+>>>>>>> 2d6783f (	modified:   src/components/Footer.astro)
         {/* MOBILE DROPDOWN */}
         <div
           ref={menuRef}
