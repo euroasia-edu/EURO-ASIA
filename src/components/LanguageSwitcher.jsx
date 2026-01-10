@@ -25,9 +25,16 @@ export default function LanguageSwitcher({ lang = "ro", currentPath = "/" }) {
     switchHref += "/";
   }
 
-  return (
-    <a className="lang-switcher" href={switchHref}>
-      {lang.toUpperCase()} {/* afișează limba curentă */}
-    </a>
-  );
+return (
+  <a
+    className="lang-switcher"
+    href={switchHref}
+    onClick={() => {
+      document.cookie = `lang=${targetLang}; path=/; max-age=31536000`;
+    }}
+  >
+    {lang.toUpperCase()}
+  </a>
+);
+
 }
