@@ -1,17 +1,20 @@
 ---
-const lang = Astro.cookies.get("lang")?.value || "ro";
----
-<html lang="en">
-  <head>
-    <meta http-equiv="refresh" content={`0; url=/${lang}`} />
-    <script>
-      const lang = document.cookie
-        .split("; ")
-        .find(row => row.startsWith("lang="))
-        ?.split("=")[1] || "ro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ro from "../i18n/ro";
+import en from "../i18n/en";
 
-      window.location.replace("/" + lang);
-    </script>
-  </head>
-  <body></body>
-</html>
+const cookieLang = Astro.cookies.get("lang")?.value;
+const lang = cookieLang === "en" ? "en" : "ro";
+
+const t = lang === "en" ? en.home : ro.home;
+---
+
+<BaseLayout lang={lang} title="Home | EURO ASIA">
+
+  <section class="about-section">
+    <h1>{t.title}</h1>
+    <p>{t.text1}</p>
+    <p>{t.text2}</p>
+  </section>
+
+</BaseLayout>

@@ -1,12 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ro from "../../i18n/ro";
 
-const about = {
-  title: "DESPRE NOI",
-  text: `Suntem pasionați de educația internațională și de experiențele care deschid orizonturi. Facilităm schimburi culturale, programe de studiu și suport complet pentru studenți, asigurând mobilități sigure, confortabile și memorabile.`,
-  text2: `Scopul nostru este ca fiecare student să plece acasă cu noi cunoștințe, prietenii internaționale și amintiri care inspiră. Lucrăm alături de parteneri din România, Italia și Turcia pentru a transforma fiecare mobilitate într-o experiență educațională reală și plină de oportunități.`,
-  image: "https://i.imgur.com/Ub3auHi.jpeg",
-};
+const t = ro.home;
 ---
 
 <BaseLayout title="Acasă | EURO ASIA EDUCATION" lang="ro">
@@ -15,14 +11,15 @@ const about = {
   <section class="about-section">
     <div class="container about-container">
       <div class="about-text">
-        <h1>{about.title}</h1>
-        <p>{about.text}</p>
-        <p>{about.text2}</p>
+        <h1>{t.title}</h1>
+        <p>{t.text}</p>
+        <p>{t.text2}</p>
       </div>
       <div class="about-image">
-        <img src={about.image} alt="Despre noi" />
+        <img src={t.image} alt="Despre noi" />
       </div>
     </div>
   </section>
 
 </BaseLayout>
+
