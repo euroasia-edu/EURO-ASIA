@@ -1,13 +1,20 @@
 import { defineMiddleware } from "astro/middleware";
 
-export const onRequest = defineMiddleware(async ({ url, request, redirect }, next) => {
-  if (url.pathname === "/") {
-    const cookie = request.headers.get("cookie") || "";
-    const match = cookie.match(/lang=(ro|en)/);
-    const lang = match ? match[1] : "ro"; // fallback
+export const onRequest = defineMiddleware(async (context, next) => {
+  const { request, cookies, url } = context;
 
-    return redirect(`/${lang}`, 308);
+  // rulează DOAR pe homepage
+  if (url.pathname !== "/") {
+    return next();
   }
 
-  return next();
+  const lang = cookies.get("lang")?.value;
+
+  // dacă userul a ales o limbă înainte
+  if (lang === "ro" || lang === "en") {
+    return Response.redirect(new URL(`/${lang}`, url), 302);
+  }
+
+  // fallback default
+  return Response.redirect(new URL("/ro", url), 302);
 });
