@@ -9,15 +9,19 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <form id="contact-form">
         <h1>Contactează-ne</h1>
         <label>
-          Nume
+          Nume:
           <input type="text" name="name" placeholder="Numele tău" required />
         </label>
         <label>
-          Email
+          Email:
           <input type="email" name="email" placeholder="Email-ul tău" required />
         </label>
+          <label>
+    Telefon:
+    <input type="tel" name="phone" placeholder="Numărul tău de telefon" required />
+  </label>
         <label>
-          Mesaj
+          Mesaj:
           <textarea name="message" placeholder="Scrie mesajul aici..." required></textarea>
         </label>
         <button type="submit">Trimite</button>
@@ -56,9 +60,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const serviceID = "YOUR_SERVICE_ID";
-      const templateID = "YOUR_TEMPLATE_ID";
-      const userID = "YOUR_USER_ID";
+      const serviceID = "contact_dumitrw";
+      const templateID = "template_85gm9jl";
+      const userID = "HacNSb-s6B7aEOg_w";
 
       try {
         await emailjs.sendForm(serviceID, templateID, form, userID);
