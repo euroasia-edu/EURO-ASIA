@@ -9,12 +9,20 @@ const lang = cookieLang === "en" ? "en" : "ro";
 const t = lang === "en" ? en.home : ro.home;
 ---
 
-<BaseLayout lang={lang} title="Home | EURO ASIA">
+<BaseLayout title="Acasă | EURO ASIA EDUCATION" lang={lang}>
 
+  <!-- About Section -->
   <section class="about-section">
-    <h1>{t.title}</h1>
-    <p>{t.text1}</p>
-    <p>{t.text2}</p>
+    <div class="container about-container">
+      <div class="about-text">
+        <h1>{t.title}</h1>
+        <p>{t.text}</p>
+        <p>{t.text2}</p>
+      </div>
+      <div class="about-image">
+        <img src={t.image} alt="Despre noi" />
+      </div>
+    </div>
   </section>
 
 </BaseLayout>
