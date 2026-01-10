@@ -1,5 +1,17 @@
 ---
 const lang = Astro.cookies.get("lang")?.value || "ro";
-
-return Astro.redirect("/" + lang);
 ---
+<html lang="en">
+  <head>
+    <meta http-equiv="refresh" content={`0; url=/${lang}`} />
+    <script>
+      const lang = document.cookie
+        .split("; ")
+        .find(row => row.startsWith("lang="))
+        ?.split("=")[1] || "ro";
+
+      window.location.replace("/" + lang);
+    </script>
+  </head>
+  <body></body>
+</html>
