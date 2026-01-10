@@ -3,15 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ro from "../i18n/ro";
 import en from "../i18n/en";
 
-const cookieLang = Astro.cookies.get("lang")?.value;
-const lang = cookieLang === "en" ? "en" : "ro";
-
-const t = lang === "en" ? en.home : ro.home;
+const defaultLang = 'ro';
+const t = defaultLang === 'ro' ? ro.home : en.home;
 ---
-
-<BaseLayout title="Acasă | EURO ASIA EDUCATION" lang={lang}>
-
-  <!-- About Section -->
+<BaseLayout title={t.title} lang={defaultLang}>
   <section class="about-section">
     <div class="container about-container">
       <div class="about-text">
@@ -20,9 +15,8 @@ const t = lang === "en" ? en.home : ro.home;
         <p>{t.text2}</p>
       </div>
       <div class="about-image">
-        <img src={t.image} alt="Despre noi" />
+        <img src={t.image} alt={t.title} />
       </div>
     </div>
   </section>
-
 </BaseLayout>
