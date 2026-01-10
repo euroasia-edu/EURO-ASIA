@@ -7,5 +7,6 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), react()]
+  integrations: [mdx(), react()],
+  site: "https://euro-asia-bay.vercel.app",
 });
