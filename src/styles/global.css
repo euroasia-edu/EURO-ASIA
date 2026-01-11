@@ -1,7 +1,7 @@
 :root {
   --bg: #ffffff;
-  --text: #111111;
-  --muted: #6b7280;
+  --text: #0a2644;
+  --muted: #00246d;
   --accent: #1f2937;
   --max-width: 1200px;
 }
@@ -335,14 +335,14 @@ section {
 .about-text h1 {
   font-size: 2.8rem;
   margin-bottom: 24px;
-  color: #1f2937;
+  color: #082f64;
 }
 
 .about-text p {
   font-size: 1.15rem;
   line-height: 1.8;
   margin-bottom: 16px;
-  color: #374151;
+  color: #040e18;
 }
 
 /* Image */
@@ -355,7 +355,7 @@ section {
   height: auto;
   border-radius: 16px;
   object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.171);
+  box-shadow: 0 10px 25px rgba(0, 2, 92, 0.164);
   transition: transform 0.3s ease;
 }
 
