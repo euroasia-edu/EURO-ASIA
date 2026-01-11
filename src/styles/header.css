@@ -150,6 +150,9 @@
   /* logo + switcher pe mobil */
   .logo-wrapper {
     margin: 0 auto;
+        flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
   .desktop-lang-switcher {
@@ -158,5 +161,20 @@
 
   .mobile-lang-switcher {
     display: block;
+      position: absolute;
+        right: 16px;
+    top: 53%;
+        transform: translateY(-50%);
+    z-index: 1002;
+  }
+    .logo img {
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 1001;
+  }
   }
 }
