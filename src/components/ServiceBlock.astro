@@ -18,11 +18,11 @@ const {
 
 <style>
 .block {
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 32px;
   align-items: center;
-  margin: 96px 1;
+  margin: 0 auto;
   max-width: var(--max-width);
 }
 
@@ -41,6 +41,7 @@ const {
 }
 @media (max-width: 768px) {
   .block {
+    display: grid;
     grid-template-columns: 1fr; /* o singură coloană */
     gap: 24px; /* mai puțin spațiu între text și imagine */
   }
