@@ -1,7 +1,7 @@
 :root {
   --bg: #ffffff;
-  --text: #0a2644;
-  --muted: #00246d;
+  --text: #111111;
+  --muted: #6b7280;
   --accent: #1f2937;
   --max-width: 1200px;
 }
@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
 }
- 
+
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
@@ -335,14 +335,14 @@ section {
 .about-text h1 {
   font-size: 2.8rem;
   margin-bottom: 24px;
-  color: #082f64;
+  color: #1f2937;
 }
 
 .about-text p {
   font-size: 1.15rem;
   line-height: 1.8;
   margin-bottom: 16px;
-  color: #040e18;
+  color: #374151;
 }
 
 /* Image */
@@ -355,7 +355,7 @@ section {
   height: auto;
   border-radius: 16px;
   object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0, 2, 92, 0.164);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.171);
   transition: transform 0.3s ease;
 }
 
