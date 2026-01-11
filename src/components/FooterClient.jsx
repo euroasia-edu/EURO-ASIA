@@ -62,7 +62,7 @@ export default function FooterClient({ lang = "ro" }) {
       </div>
 
       <div className="footer-copy">
-        &copy; {new Date().getFullYear()} EURO ASIA EDUCATION. Toate drepturile rezervate.
+        &copy; {new Date().getFullYear()} EURO ASIA EDUCATION. All rights reserved.
       </div>
     </footer>
   );
