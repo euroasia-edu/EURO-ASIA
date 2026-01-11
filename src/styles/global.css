@@ -1,6 +1,6 @@
 :root {
   --bg: #ffffff;
-  --text: #111111;
+  --text: #07042e;
   --muted: #6b7280;
   --accent: #1f2937;
   --max-width: 1200px;
@@ -335,7 +335,7 @@ section {
 .about-text h1 {
   font-size: 2.8rem;
   margin-bottom: 24px;
-  color: #1f2937;
+  color: #002963;
 }
 
 .about-text p {
