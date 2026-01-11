@@ -22,31 +22,45 @@ const {
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
-  margin: 96px 1;
+  margin: 96px auto; /* centru pe orizontală */
   max-width: 1200px;
+  padding: 0 16px; /* pentru mobil */
 }
 
-.block.reverse { direction: rtl; background: #f8f8f8; /* doar block-urile reverse au background */ padding: 20px; /* adaugă padding ca să nu fie textul lipit de margini */ border-radius: 10px; /* opțional, ca să arate mai bine */ }
-.block.reverse > * {
-  direction: ltr;
+.block.reverse {
+  grid-template-areas: "content media"; /* inversăm ordinea vizuală */
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.block.reverse .content {
+  grid-area: content;
+}
+.block.reverse .media {
+  grid-area: media;
 }
 
 .media img {
   width: 100%;
   border-radius: 12px;
+  display: block;
 }
 
 .content h2 {
   margin-bottom: 16px;
 }
+
 @media (max-width: 768px) {
   .block {
-    grid-template-columns: 1fr; /* o singură coloană */
-    gap: 24px; /* mai puțin spațiu între text și imagine */
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .block.reverse {
-    direction: ltr; /* ignorăm reverse pe mobil */
+    grid-template-areas:
+      "media"
+      "content"; /* pe mobil, imagine sus, text jos */
   }
 
   .media,
@@ -54,6 +68,4 @@ const {
     width: 100%;
   }
 }
-
-
 </style>
