@@ -649,17 +649,30 @@ html, body {
   max-width: 1200px;
   margin: 0 auto 64px;
   padding: 0 24px;
-  align-items: center;
+}
+
+.optional-activities {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.optional-excursions {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.optional-excursions h2 {
+  margin-bottom: 32px;
 }
 
 .columns-wrapper {
   display: grid;
-  align-items: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin-top: 24px;
   margin-bottom: 24px;
-  max-width: 1200px;
 }
 
 .column h3 {
