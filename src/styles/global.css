@@ -653,6 +653,7 @@ html, body {
 
 .columns-wrapper {
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin-top: 24px;
