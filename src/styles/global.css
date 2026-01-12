@@ -657,6 +657,7 @@ html, body {
   gap: 32px;
   margin-top: 24px;
   margin-bottom: 24px;
+  max-width: 1200px;
 }
 
 .column h3 {
