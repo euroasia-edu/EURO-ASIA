@@ -58,7 +58,7 @@ export default function FooterClient({ lang = "ro" }) {
       </nav>
 
       <div className="footer-policy-wrapper">
-        <a href={`/privacy`} className="footer-policy">Privacy Policy</a>
+        <a href={`/${lang}/privacy`} className="footer-policy">Privacy Policy</a>
       </div>
 
       <div className="footer-copy">

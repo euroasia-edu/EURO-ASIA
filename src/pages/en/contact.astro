@@ -31,10 +31,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <!-- Contact info and location -->
       <div class="contact-info">
         <h2>Contact Details</h2>
-        <p><strong>Email:</strong> info@euroasia-education.com</p>
+        <p><strong>Email:</strong> <a class="p-mail" href="mailto:info@euroasia-education.com">info@euroasia-education.com</a></p>
         <p><strong>Phone:</strong> </p>
-        <p>+393 351 781 755</p>
-        <p>+40 720 754 962</p>
+        <p><a class="p-mail" href="tel:+393 351 781 755">+393 351 781 755</a></p>
+        <p><a class="p-mail" href="tel:+40 720 754 962">+40 720 754 962</a></p>
         <p><strong>Address:</strong> 41013 Castelfranco E.</p>
       </div>
 
@@ -77,7 +77,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   </script>
 
   <style>
-    /* păstrează exact stilurile din ro/contact */
     .contact-section { padding: 80px 0; }
     .contact-container { display: flex; gap: 60px; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
     form, .contact-info { flex: 1 1 400px; }
