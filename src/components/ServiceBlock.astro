@@ -22,13 +22,13 @@ const {
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
-  margin: 64px auto; /* centru pe orizontală */
+  margin: 64px auto;
   max-width: 1200px;
-  padding: 0 16px; /* pentru mobil */
+  padding: 0 16px;
 }
 
 .block.reverse {
-  grid-template-areas: "content media"; /* inversăm ordinea vizuală */
+  grid-template-areas: "content media";
   background: #f8f8f8;
   padding: 30px;
   border-radius: 21px;
@@ -49,6 +49,11 @@ const {
 
 .content h2 {
   margin-bottom: 16px;
+  /* ⭐ DOAR GRADIENT culoare ⭐ */
+  background: linear-gradient(135deg, #000a42 0%, #aa0000 50%, #000a42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (max-width: 768px) {
@@ -60,7 +65,7 @@ const {
   .block.reverse {
     grid-template-areas:
       "media"
-      "content"; /* pe mobil, imagine sus, text jos */
+      "content";
   }
 
   .media,

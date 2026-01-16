@@ -580,6 +580,9 @@ body.gallery-open {
     gap: 12px;
   }
 
+  .footer-center a:hover {
+    color: #333;
+  }}
   .footer-left,
   .footer-right {
     flex: 0 0 auto;
