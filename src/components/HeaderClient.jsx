@@ -39,7 +39,7 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentPath
 </button>
 
         
-        {/* OVERLAY - deja fixed, funcționează */}
+        {/* OVERLAY */}
         <div className={`mobile-overlay ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(false)}></div>
 
         {/* LOGO + LANGUAGE SWITCHER */}
@@ -65,7 +65,7 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentPath
           </div>
         </nav>
 
-        {/* DROPDOWN cu PORTAL - ȘTERGE DIV-UL VECHI */}
+        {/* DROPDOWN cu PORTAL */}
         {menuOpen && createPortal(
           <div
             ref={menuRef}
