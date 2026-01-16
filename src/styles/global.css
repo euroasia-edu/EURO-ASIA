@@ -450,6 +450,11 @@ section {
   justify-content: center;
 }
 
+.footer-center a:hover {
+  color: #505050;
+  text-decoration: underline;
+}
+
 /* Selectorul de limbă */
 .footer-right {
   position: absolute;
@@ -457,9 +462,9 @@ section {
 }
 .footer-center {
   padding-top: 30px;
-  flex: 1; /* ocupă tot spațiul rămas */
+  flex: 1; 
   display: flex;
-  justify-content: center; /* linkurile centrate în zona centrală */
+  justify-content: center;
   gap: 20px;
 }
 
@@ -498,6 +503,7 @@ section {
 
 .footer-policy-wrapper {
   width: 100%;
+  padding-top: 30px;
   text-align: center;
   margin-top: 8px; /* spațiu față de nav */
 }
@@ -541,6 +547,8 @@ section {
     flex: 1 1 auto;
     gap:12;
   }
+
+
 
   .footer-left,
   .footer-right {

@@ -14,6 +14,11 @@ export default function FooterClient({ lang = "ro" }) {
     ],
   };
 
+  const footerPolicy = {
+    ro: "Politica De Confidențialitate.",
+    en: "Privacy Policy.",
+  };
+
   const supportedLangs = ["ro", "en"]; // poți adăuga fr, de, it, es
 
   const handleLangChange = (e) => {
@@ -58,7 +63,7 @@ export default function FooterClient({ lang = "ro" }) {
       </nav>
 
       <div className="footer-policy-wrapper">
-        <a href={`/${lang}/privacy`} className="footer-policy">Privacy Policy</a>
+        <a href={`/${lang}/privacy`} className="footer-policy">{footerPolicy[lang]}</a>
       </div>
 
       <div className="footer-copy">

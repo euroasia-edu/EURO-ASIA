@@ -50,17 +50,18 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentPath
       </div>
     </div>
 
-    {/* DESKTOP NAV */}
-    <nav className="header-nav">
-      {navList.map(btn => (
-        <a key={btn.href} href={btn.href}>{btn.text}</a>
-      ))}
+<nav className="header-nav">
+  <div className="nav-links">
+    {navList.map(btn => (
+      <a key={btn.href} href={btn.href}>{btn.text}</a>
+    ))}
+  </div>
 
-      {/* SWITCHER DESKTOP */}
-      <div className="desktop-lang-switcher">
-        <LanguageSwitcher lang={lang} currentPath={currentPath} />
-      </div>
-    </nav>
+  <div className="desktop-lang-switcher">
+    <LanguageSwitcher lang={lang} currentPath={currentPath} />
+  </div>
+</nav>
+
 
 {/* MOBILE DROPDOWN */}
 <div

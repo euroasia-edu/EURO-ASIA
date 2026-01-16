@@ -31,7 +31,14 @@
   align-items: center;
 }
 
-.header-nav a {
+.nav-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-links a {
   position: relative;
   font-weight: 700;
   text-transform: uppercase;
@@ -44,7 +51,13 @@
   color: #aa0000;
 }
 
-.header-nav a::after {
+.desktop-lang-switcher a:hover {
+  color: #ffffff;
+}
+
+
+
+.nav-links a::after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -54,7 +67,7 @@
   background: #000a42;
   transition: width 0.3s ease;
 }
-.header-nav a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 /* SWITCHER */
@@ -67,6 +80,7 @@
   font-weight: bold;
   transition: 0.2s;
 }
+
 
 .lang-switcher:hover {
   background-color: #333;
