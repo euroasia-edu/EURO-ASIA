@@ -8,21 +8,37 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentPath
   const menuBtnRef = useRef(null);
   const menuRef = useRef(null);
 
-  useEffect(() => {
-    const onClick = (e) => {
-      if (
-        menuOpen &&
-        !menuRef.current?.contains(e.target) &&
-        !menuBtnRef.current?.contains(e.target)
-      ) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", onClick);
-    return () => document.removeEventListener("mousedown", onClick);
-  }, [menuOpen]);
+useEffect(() => {
+  const onClick = (e) => {
+    if (
+      menuOpen &&
+      !menuRef.current?.contains(e.target) &&  // click AFARĂ
+      !menuBtnRef.current?.contains(e.target)
+    ) {
+      setMenuOpen(false);
+    }
+  };
+  document.addEventListener("mousedown", onClick);
+  return () => document.removeEventListener("mousedown", onClick);
+}, [menuOpen]);
+
 
   const navList = Array.isArray(navButtons) ? navButtons : navButtons[lang] || [];
+{navList.map(btn => (
+  <button
+    key={btn.href}
+    className="dropdown-link"
+    onClick={() => {
+      setTimeout(() => {
+        setMenuOpen(false); 
+      }, 500);
+      window.location.href = btn.href; // navighează imediat
+    }}
+  >
+    {btn.text}
+  </button>
+))}
+
 
   return (
     <header className="site-header">
@@ -73,7 +89,7 @@ export default function HeaderClient({ navButtons = [], lang = "ro", currentPath
             onClick={e => e.stopPropagation()} // previne închiderea la click în meniu
           >
             {navList.map(btn => (
-              <a key={btn.href} href={btn.href} onClick={() => setMenuOpen(false)}>
+              <a key={btn.href} href={btn.href} onClick={() => setMenuOpen(true)}>
                 {btn.text}
               </a>
             ))}
