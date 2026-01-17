@@ -1,0 +1,44 @@
+import ServiceBlock from "../../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Excursiones culturales opcionales" reverse>
+  <p> 
+    Además de las actividades culturales estándar incluidas en el proyecto, pueden organizarse, a solicitud del grupo, excursiones culturales opcionales destinadas a completar y diversificar la experiencia Erasmus+.
+  </p>
+  <p>
+    Estas actividades permiten ampliar el programa cultural y adaptarlo a los intereses de los participantes.
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="excursii" />
+</ServiceBlock>
+
+<section class="optional-excursions">
+  <h2>Ejemplos de excursiones opcionales:</h2>
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Florencia</h3>
+      <p>
+        – Ciudad emblemática del Renacimiento italiano, reconocida por su patrimonio artístico y cultural.<br/>
+        La visita incluye monumentos históricos y culturales de importancia europea.
+      </p>
+
+      <h3>Bolonia</h3>
+      <p>
+        – Ciudad universitaria con tradición académica, conocida por su centro histórico bien conservado y su papel en el desarrollo de la educación europea.
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Roma</h3>
+      <p>
+        – Capital de Italia, con un patrimonio histórico y cultural excepcional.<br/>
+        La excursión ofrece una perspectiva sobre la historia antigua, medieval y moderna de Europa.
+      </p>
+
+      <h3>Milán</h3>
+      <p>
+        – Importante centro económico y cultural, reconocido por su arquitectura, dinamismo urbano e influencia a nivel europeo.
+      </p>
+    </div>
+  </div>
+</section>

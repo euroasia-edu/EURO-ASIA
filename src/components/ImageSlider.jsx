@@ -1,14 +1,36 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
-export default function ImageSlider({ images = [], fullscreen = false }) {
+export default function ImageSlider({ 
+  images = [], 
+  serviceName, 
+  fullscreen = false 
+}) {
   const [index, setIndex] = useState(0);
+  const [sliderImages, setSliderImages] = useState(images);
   const startX = useRef(null);
 
+  // Încarcă automat images din i18n/ro/images.js dacă serviceName e dat
+  useEffect(() => {
+    if (serviceName && !images.length) {
+      import('../i18n/ro/images.js')
+        .then(module => {
+          const serviceImages = module.default.services[serviceName] || [];
+          setSliderImages(serviceImages);
+        })
+        .catch(() => {
+          console.warn(`Images not found for service: ${serviceName}`);
+          setSliderImages([]);
+        });
+    } else {
+      setSliderImages(images);
+    }
+  }, [serviceName, images]);
+
   const prev = () =>
-    setIndex((index - 1 + images.length) % images.length);
+    setIndex((index - 1 + sliderImages.length) % sliderImages.length);
 
   const next = () =>
-    setIndex((index + 1) % images.length);
+    setIndex((index + 1) % sliderImages.length);
 
   const onTouchStart = (e) => {
     startX.current = e.touches[0].clientX;
@@ -36,12 +58,12 @@ export default function ImageSlider({ images = [], fullscreen = false }) {
           transform: `translateX(-${index * 100}%)`
         }}
       >
-        {images.map((src, i) => (
-          <img src={src} key={i} draggable={false} />
+        {sliderImages.map((src, i) => (
+          <img src={src} key={i} draggable={false} alt={`Slide ${i + 1}`} />
         ))}
       </div>
 
-      {images.length > 1 && (
+      {sliderImages.length > 1 && (
         <>
           <button className="prev" onClick={prev}>‹</button>
           <button className="next" onClick={next}>›</button>

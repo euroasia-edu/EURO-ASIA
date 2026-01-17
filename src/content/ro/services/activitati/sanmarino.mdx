@@ -1,24 +1,15 @@
 import ServiceBlock from "../../../../components/ServiceBlock.astro";
 import ImageSlider from "../../../../components/ImageSlider.jsx";
 
-<ServiceBlock title="San Marino – stat în stat" >
- <p> 
-  Este organizată o excursie culturală în Republica San Marino, unul dintre cele mai vechi state independente din lume, situat pe vârful Muntelui Titano, cu vedere panoramică asupra coastei Adriatice.
+<ServiceBlock title="San Marino – stat în stat">
+  <p> 
+    Este organizată o excursie culturală în Republica San Marino, unul dintre cele mai vechi state independente din lume, situat pe vârful Muntelui Titano, cu vedere panoramică asupra coastei Adriatice.
 
-Vizita oferă participanților ocazia de a:  
+    Vizita oferă participanților ocazia de a: 
+    – înțelege conceptul de stat independent  
+    – explora istoria și tradițiile locale  
+    – experimenta diversitatea culturală europeană
+  </p>
 
-– înțelege conceptul de stat independent  
-– explora istoria și tradițiile locale  
-– experimenta diversitatea culturală europeană
-
- </p>
-
-  <ImageSlider slot="media" client:visible
-    images={[
-    "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/135000/135843-San-Marino-All.jpg",
-    "https://www.hlb.global/wp-content/uploads/2022/01/San-Marino-resize.jpg",
-    "https://image.stirileprotv.ro/media/images/1920x1080/May2024/62448225.jpg",
-
-    "https://media.radiochisinau.md/image/201604/640x360/radiochisinau_5ba0a3be6ae1fef488481769e6b4d89f.jpg",
-  ]} />
+  <ImageSlider slot="media" client:visible serviceName="sanmarino" />
 </ServiceBlock>

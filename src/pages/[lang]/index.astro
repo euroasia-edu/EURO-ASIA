@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const langs = ['ro', 'en', 'it', 'es', 'pt', 'fr', 'de'];
+  return langs.map(lang => ({
+    params: { lang },
+    props: { lang }
+  }));
+}
+
+const { lang } = Astro.props;
+let t;
+
+try {
+  const module = await import(`../../i18n/${lang}/home.js`);
+  t = module.default.home;  // ← .home !!!!!
+} catch {
+  const fallback = await import("../../i18n/ro/home.js");
+  t = fallback.default.home;  // ← .home !!!!!
+}
+---
+
+<BaseLayout title={`${t.title} | EURO ASIA EDUCATION`} lang={lang}>
+  <section class="about-section">
+    <div class="container about-container">
+      <div class="about-text">
+        <h1>{t.title}</h1>
+        <p>{t.text}</p>
+        <p>{t.text2}</p>
+      </div>
+      <div class="about-image">
+        <img src={t.image} alt={t.title} loading="lazy" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

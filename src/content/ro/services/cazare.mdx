@@ -1,7 +1,7 @@
 import ServiceBlock from "../../../components/ServiceBlock.astro";
 import ImageSlider from "../../../components/ImageSlider.jsx";
 
-<ServiceBlock title="Cazare" >
+<ServiceBlock title="Cazare">
   <p>
     Oferim soluții de cazare atent selecționate, adaptate standardelor programelor Erasmus+, pentru a asigura confort, siguranță și o experiență plăcută tuturor participanților.
   </p>
@@ -10,17 +10,8 @@ import ImageSlider from "../../../components/ImageSlider.jsx";
     Cazarea este asigurată în structuri de 3–4 stele, verificate și colaborate constant, situate în zone bine conectate la locațiile de formare sau activități.
   </p>
 
-
-
-
-  <ImageSlider slot="media" client:visible
-    images={[
-      "https://www.hotelchristianrimini.com/source/hotel-3.jpg",
-      "https://www.veladorohotel.it/source/slide-home-1.jpg?v=1764847964.jpg"
-    ]} />
+  <ImageSlider slot="media" client:visible serviceName="cazare" />
 </ServiceBlock>
-
-
 
 <section class="accommodation-section">
   <div class="columns-wrapper">

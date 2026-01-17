@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/global.css";
+
+export async function getStaticPaths() {
+  const langs = ['ro', 'en', 'it', 'es', 'pt', 'fr', 'de'];
+  return langs.map(lang => ({
+    params: { lang },
+    props: { lang }
+  }));
+}
+
+const { lang } = Astro.props;
+let t;
+
+try {
+  const module = await import(`../../i18n/${lang}/services.js`);
+  t = module.default.services;
+} catch {
+  const fallback = await import("../../i18n/ro/services.js");
+  t = fallback.default.services;
+}
+
+// FIX: Import dinamic bazat pe lang (RO pentru toate, EN când există)
+const contentLang = ['en', 'ro', 'it', 'es', 'pt', 'fr', 'de'].includes(lang) ? lang : 'ro';
+
+
+const Administrare = await import(`../../content/${contentLang}/services/administrare.mdx`);
+const Cazare = await import(`../../content/${contentLang}/services/cazare.mdx`);
+const Transport = await import(`../../content/${contentLang}/services/transport.mdx`);
+const Instruire = await import(`../../content/${contentLang}/services/instruire.mdx`);
+const Activitati = await import(`../../content/${contentLang}/services/activitati/activitati.mdx`);
+const ARimini = await import(`../../content/${contentLang}/services/activitati/rimini.mdx`);
+const ASanMarino = await import(`../../content/${contentLang}/services/activitati/sanmarino.mdx`);
+const AVenetia = await import(`../../content/${contentLang}/services/activitati/venetia.mdx`);
+const AOptional = await import(`../../content/${contentLang}/services/activitati/optional.mdx`);
+const AExcursii = await import(`../../content/${contentLang}/services/activitati/excursii.mdx`);
+const Organizare = await import(`../../content/${contentLang}/services/organizare.mdx`);
+---
+
+<BaseLayout title={t.title} lang={lang}>
+  <section class="services-section">
+    <div class="container">
+      <Administrare.default />
+      <Instruire.default />
+      <Transport.default />
+      <Cazare.default />
+      <Activitati.default />
+      <ARimini.default />
+      <ASanMarino.default />
+      <AVenetia.default />
+      <AOptional.default />
+      <AExcursii.default />
+      <Organizare.default />
+    </div>
+  </section>
+</BaseLayout>

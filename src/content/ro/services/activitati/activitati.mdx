@@ -1,16 +1,13 @@
 import ServiceBlock from "../../../../components/ServiceBlock.astro";
 import ImageSlider from "../../../../components/ImageSlider.jsx";
 
-<ServiceBlock title="Activități culturale în Rimini" >
+<ServiceBlock title="Activități culturale în Rimini">
   <p>
-Programele Erasmus+ includ un pachet standard de activități culturale, menite să completeze experiența educațională prin descoperirea patrimoniului istoric, cultural și social al Italiei.
-</p><p>
-Activitățile sunt organizate astfel încât participanții să îmbine învățarea non-formală cu experiența directă a culturii locale, într-un cadru sigur și bine structurat.
+    Programele Erasmus+ includ un pachet standard de activități culturale, menite să completeze experiența educațională prin descoperirea patrimoniului istoric, cultural și social al Italiei.
+  </p>
+  <p>
+    Activitățile sunt organizate astfel încât participanții să îmbine învățarea non-formală cu experiența directă a culturii locale, într-un cadru sigur și bine structurat.
   </p>
 
-  <ImageSlider slot="media" client:visible
-    images={[
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s",
-
-  ]} />
+  <ImageSlider slot="media" client:visible serviceName="activitati" /> 
 </ServiceBlock>

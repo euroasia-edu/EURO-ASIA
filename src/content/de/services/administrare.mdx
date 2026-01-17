@@ -1,0 +1,11 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Verwaltung und Management" reverse>
+  <p>
+    Organisation des Ausbildungsprogramms (Praktika für Studenten oder Studienbesuche für Lehrkräfte und Fachkräfte),
+    Überwachung, Betreuung, Bewertung und Zertifizierung, einschließlich des Europass-Mobilitätszeugnisses.
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="administrare" />
+</ServiceBlock>

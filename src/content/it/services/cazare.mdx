@@ -1,0 +1,50 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Alloggio">
+  <p>
+    Offriamo soluzioni di alloggio accuratamente selezionate, adattate agli standard dei programmi Erasmus+, per garantire comfort, sicurezza e un'esperienza piacevole a tutti i partecipanti.
+  </p>
+
+  <p>
+    L'alloggio è fornito in strutture a 3-4 stelle, regolarmente verificate e con cui collaboriamo costantemente, situate in zone ben collegate alle sedi di formazione o attività.
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="cazare" />
+</ServiceBlock>
+
+<section class="accommodation-section">
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Studenti / Partecipanti</h3>
+      <p>
+        – Alloggio in camere condivise (3-4 persone), in base alle esigenze del gruppo<br/>
+        – Sistemazione flessibile basata su: età, genere, esigenze speciali<br/>
+        – 3 pasti al giorno (colazione, pranzo e cena), adattati anche per diete speciali e restrizioni alimentari
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Insegnanti / Accompagnatori</h3>
+      <p>
+        – Alloggio in camere singole<br/>
+        – Stessi standard di comfort e servizi<br/>
+        – Garanzia di privacy e condizioni ottimali per riposo e coordinamento
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Servizi inclusi</h3>
+      <p>
+        – Pulizia regolare<br/>
+        – Wi-Fi<br/>
+        – Assistenza durante l'intero soggiorno<br/>
+        – Supporto logistico e intervento rapido se necessario
+      </p>
+    </div>
+  </div>
+
+  <p class="note">
+    Tutte le soluzioni di alloggio sono scelte per rispettare i requisiti Erasmus+ e contribuire a un'esperienza educativa sicura e di qualità, sia per studenti che per il personale docente.
+  </p>
+</section>

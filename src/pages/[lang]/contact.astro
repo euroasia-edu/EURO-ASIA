@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const langs = ['ro', 'en', 'it', 'es', 'pt', 'fr', 'de'];
+  return langs.map(lang => ({
+    params: { lang },
+    props: { lang }
+  }));
+}
+
+const { lang } = Astro.props;
+let t;
+
+try {
+  const module = await import(`../../i18n/${lang}/contact.js`);
+  t = module.default.contact;  // ← .contact !!!!!
+} catch {
+  const fallback = await import("../../i18n/ro/contact.js");
+  t = fallback.default.contact;  // ← .contact !!!!!
+}
+---
+
+<BaseLayout title={`${t.title}`} lang={lang}>
+  <section class="contact-section">
+    <div class="container contact-container">
+      <!-- Formular -->
+      <form id="contact-form" class="contact-form">
+        <h1>{t.h1}</h1>
+        <label>
+          {t.name}:
+          <input type="text" name="name" placeholder={t.namePlaceholder} required />
+        </label>
+        <label>
+          {t.email}:
+          <input type="email" name="email" placeholder={t.emailPlaceholder} required />
+        </label>
+        <label>
+          {t.phone}:
+          <input type="tel" name="phone" placeholder={t.phonePlaceholder} required />
+        </label>
+        <label>
+          {t.message}:
+          <textarea name="message" placeholder={t.messagePlaceholder} required></textarea>
+        </label>
+        <button type="submit">{t.submit}</button>
+      </form>
+
+      <!-- Date contact -->
+      <div class="contact-info">
+        <h2>{t.contactInfo}</h2>
+        <p><strong>{t.emailLabel}: </strong><a class="p-mail" href={`mailto:${t.emailAddress}`}>{t.emailAddress}</a></p>
+        <p class="phone-line">
+          <strong>{t.phoneLabel}: </strong>
+          <a class="p-mail" href={`tel:${t.phonePrimary}`}>{t.phonePrimary}</a>
+        </p>
+        <p class="phone-line-second">
+          <span></span><a class="p-mail" href={`tel:${t.phoneSecondary}`}>{t.phoneSecondary}</a>
+        </p>
+        <p><strong>{t.address}:</strong> {t.addressText}</p>
+      </div>
+    </div>
+
+    <!-- Hartă -->
+    <div class="map-container" style="margin-top: 20px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.123456789!2d12.567890!3d44.067890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1320c9f0abcd1234%3A0xabcdef1234567890!2sRimini%2C%20Italia!5e0!3m2!1s{lang}!2s!4v1699999999999!5m2!1s{lang}!2s"
+        width="100%"
+        height="400"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </section>
+
+  <script type="module">
+    import emailjs from "https://cdn.skypack.dev/@emailjs/browser";
+    const form = document.getElementById("contact-form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const serviceID = "contact_euroasia";
+      const templateID = "template_i9zhdlj";
+      const userID = "-B3hqgeTkyNkvk0Wm";
+
+      try {
+        await emailjs.sendForm(serviceID, templateID, form, userID);
+        alert("{t.success}");
+        form.reset();
+      } catch (err) {
+        alert("{t.error}");
+        console.error(err);
+      }
+    });
+  </script>
+</BaseLayout>

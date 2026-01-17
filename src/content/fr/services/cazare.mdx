@@ -1,0 +1,50 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Hébergement">
+  <p>
+    Nous proposons des solutions d'hébergement soigneusement sélectionnées, adaptées aux normes des programmes Erasmus+, garantissant confort, sécurité et une expérience agréable pour tous les participants.
+  </p>
+
+  <p>
+    L'hébergement est assuré dans des établissements 3-4 étoiles, régulièrement vérifiés et avec lesquels nous collaborons en continu, situés dans des zones bien desservies par rapport aux lieux de formation ou d'activités.
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="cazare" />
+</ServiceBlock>
+
+<section class="accommodation-section">
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Élèves / Participants</h3>
+      <p>
+        – Hébergement en chambres partagées (3-4 personnes), selon les besoins du groupe<br/>
+        – Attribution flexible basée sur : âge, genre, besoins spécifiques<br/>
+        – 3 repas par jour (petit-déjeuner, déjeuner et dîner), adaptés également aux régimes spéciaux et restrictions alimentaires
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Enseignants / Accompagnateurs</h3>
+      <p>
+        – Hébergement en chambres individuelles<br/>
+        – Même niveau de confort et de services<br/>
+        – Garantie de confidentialité et de conditions optimales pour le repos et la coordination
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Services inclus</h3>
+      <p>
+        – Nettoyage régulier<br/>
+        – Wi-Fi<br/>
+        – Assistance pendant tout le séjour<br/>
+        – Support logistique et intervention rapide si nécessaire
+      </p>
+    </div>
+  </div>
+
+  <p class="note">
+    Toutes les solutions d'hébergement sont choisies pour respecter les exigences Erasmus+ et contribuer à une expérience éducative sûre et de qualité, tant pour les élèves que pour le personnel enseignant.
+  </p>
+</section>

@@ -2,20 +2,16 @@ import ServiceBlock from "../../../../components/ServiceBlock.astro";
 import ImageSlider from "../../../../components/ImageSlider.jsx";
 
 <ServiceBlock title="Activități culturale opționale">
- <p> 
-Pe lângă pachetul standard inclus în proiect, pot fi organizate activități culturale opționale, la solicitarea instituției participante.
- 
- (Toate opțiunile suplimentare sunt propuse în mod transparent și pot fi integrate în programul Erasmus+ conform cerințelor proiectului.
-)
- </p>
+  <p> 
+    Pe lângă pachetul standard inclus în proiect, pot fi organizate activități culturale opționale, la solicitarea instituției participante.
+    
+    (Toate opțiunile suplimentare sunt propuse în mod transparent și pot fi integrate în programul Erasmus+ conform cerințelor proiectului.)
+  </p>
 
-  <ImageSlider slot="media" client:visible
-    images={[
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s",
-  ]} />
+  <ImageSlider slot="media" client:visible serviceName="optional" />
 </ServiceBlock>
-<section class="optional-activities">
 
+<section class="optional-activities">
   <div class="columns-wrapper">
     <div class="column">
       <h3>Activități suplimentare:</h3>

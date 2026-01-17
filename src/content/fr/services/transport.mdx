@@ -1,0 +1,11 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Transport Local et Transfert Aéroport" reverse>
+  <p>
+    Transport Local (inclut le transport nécessaire aux activités du programme). 
+    Transfert aéroport (de l'aéroport d'arrivée à l'hébergement le jour d'arrivée et de l'hébergement à l'aéroport de départ le jour du départ).
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="transport" />
+</ServiceBlock>

@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const langs = ['ro', 'en', 'it', 'es', 'pt', 'fr', 'de'];
+  return langs.map(lang => ({
+    params: { lang },
+    props: { lang }
+  }));
+}
+
+const { lang } = Astro.props;
+let t;
+
+try {
+  const module = await import(`../../i18n/${lang}/privacy.js`);
+  t = module.default.privacy;
+} catch {
+  const fallback = await import("../../i18n/ro/privacy.js");
+  t = fallback.default.privacy;
+}
+---
+
+<BaseLayout title={t.title} lang={lang}>
+  <div class="container">
+    <section class="privacy-section">
+      <h1>{t.h1}</h1>
+
+      <p>{t.intro}</p>
+
+      <h2>{t.section1_title}</h2>
+      <p>{t.section1_text}</p>
+      <ul>
+        {t.section1_list.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+
+      <h2>{t.section2_title}</h2>
+      <p>{t.section2}</p>
+
+      <h2>{t.section3_title}</h2>
+      <p>{t.section3}</p>
+
+      <h2>{t.section4_title}</h2>
+      <p>{t.section4_text}</p>
+      <ul>
+        {t.section4_list.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+      <p>
+        {t.section4_contact}<a class="p-mail" href={`mailto:${t.email}`}>{t.email}</a>.
+      </p>
+
+      <h2>{t.section5_title}</h2>
+      <p>
+        {t.section5}<a class="p-mail" href={`mailto:${t.email}`}>{t.email}</a>.
+      </p>
+
+      <p>{t.final}</p>
+    </section>
+  </div>
+
+  <style>
+    .privacy-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .privacy-section h1,
+    .privacy-section h2 {
+      margin-bottom: 16px;
+    }
+
+    .privacy-section p,
+    .privacy-section ul {
+      margin-bottom: 16px;
+    }
+
+    .privacy-section ul {
+      padding-left: 20px;
+    }
+  </style>
+</BaseLayout>

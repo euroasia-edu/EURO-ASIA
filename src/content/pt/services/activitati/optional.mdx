@@ -1,0 +1,34 @@
+import ServiceBlock from "../../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Atividades culturais opcionais">
+  <p> 
+    Além do pacote padrão incluído no projeto, podem ser organizadas atividades culturais opcionais, a pedido da instituição participante.
+    
+    (Todas as opções suplementares são propostas de forma transparente e podem ser integradas no programa Erasmus+ conforme os requisitos do projeto.)
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="optional" />
+</ServiceBlock>
+
+<section class="optional-activities">
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Atividades suplementares:</h3>
+      <p>
+        – Excursões culturais extra<br/>
+        – Visitas temáticas<br/>
+        – Experiências locais específicas da região
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Planeamento conforme:</h3>
+      <p>
+        – Duração da mobilidade<br/>
+        – Objetivos educativos do projeto<br/>
+        – Orçamento disponível
+      </p>
+    </div>
+  </div>
+</section>

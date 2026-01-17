@@ -3,13 +3,9 @@ import ImageSlider from "../../../components/ImageSlider.jsx";
 
 <ServiceBlock title="Transport Local și Transfer de la Aeroport" reverse>
   <p>
-Transport Local (include transportul necesar pentru activitățile programului). 
-Transfer de la aeroport (de la aeroportul de sosire la cazare în ziua sosirii și de la cazare până la aeroportul de plecare în ziua plecării).
+    Transport Local (include transportul necesar pentru activitățile programului). 
+    Transfer de la aeroport (de la aeroportul de sosire la cazare în ziua sosirii și de la cazare până la aeroportul de plecare în ziua plecării).
   </p>
 
-  <ImageSlider slot="media" client:visible
-    images={[
-    "https://www.sustainable-bus.com/wp-content/uploads/2021/10/DSC_3571-1920x1080.jpg",
-    "https://cdn.jetphotos.com/640/6/84272_1597085627.jpg"
-  ]} />
+  <ImageSlider slot="media" client:visible serviceName="transport" />
 </ServiceBlock>

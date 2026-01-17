@@ -2,22 +2,15 @@ import ServiceBlock from "../../../components/ServiceBlock.astro";
 import ImageSlider from "../../../components/ImageSlider.jsx";
 
 <ServiceBlock title="Organizare și condiții" reverse>
- <p> 
- ### Excursii culturale opționale
+  <p> 
+    ### Excursii culturale opționale
 
-Excursiile culturale opționale:
+    Excursiile culturale opționale:
+    – sunt organizate la cerere, în funcție de disponibilitate  
+    – pot fi adaptate duratei mobilității  
+    – sunt planificate în conformitate cu obiectivele educaționale ale proiectului  
+    – presupun costuri suplimentare, stabilite transparent înainte de confirmare
+  </p>
 
-– sunt organizate la cerere, în funcție de disponibilitate  
-– pot fi adaptate duratei mobilității  
-– sunt planificate în conformitate cu obiectivele educaționale ale proiectului  
-– presupun costuri suplimentare, stabilite transparent înainte de confirmare
-
- </p>
-
-  <ImageSlider slot="media" client:visible
-    images={[
-      "https://st3.idealista.it/news/archivie/styles/fullwidth_xl/public/2023-06/images/pexels-azhar-muhammedu-3021382.jpg?VersionId=LKeGWwrSNxgt5ER0apsIOZp4Sun57BA1&itok=vSOVaZC3",
-      "https://media.istockphoto.com/id/153519588/ro/fotografie/catedrala-santa-maria-del-fiore.jpg?s=612x612&w=0&k=20&c=4XQVVCO1_YZT31pMHlLHAkFPJeHMxR43tqLmuEpFqSY=",
-      "https://images.locationscout.net/2019/01/fontana-di-trevi-rome-italy.webp?h=1400&q=80",
-  ]} />
+  <ImageSlider slot="media" client:visible serviceName="organizare" />
 </ServiceBlock>

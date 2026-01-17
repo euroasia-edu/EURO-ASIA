@@ -12,23 +12,53 @@ export default function FooterClient({ lang = "ro" }) {
       { text: "Gallery", href: "/en/gallery" },
       { text: "Contact", href: "/en/contact" },
     ],
+    it: [
+      { text: "Servizi", href: "/it/services" },
+      { text: "Galleria", href: "/it/gallery" },
+      { text: "Contatti", href: "/it/contact" },
+    ],
+    es: [
+      { text: "Servicios", href: "/es/services" },
+      { text: "Galería", href: "/es/gallery" },
+      { text: "Contacto", href: "/es/contact" },
+    ],
+    pt: [
+      { text: "Serviços", href: "/pt/services" },
+      { text: "Galeria", href: "/pt/gallery" },
+      { text: "Contato", href: "/pt/contact" },
+    ],
+    fr: [
+      { text: "Services", href: "/fr/services" },
+      { text: "Galerie", href: "/fr/gallery" },
+      { text: "Contact", href: "/fr/contact" },
+    ],
+    de: [
+      { text: "Dienste", href: "/de/services" },
+      { text: "Galerie", href: "/de/gallery" },
+      { text: "Kontakt", href: "/de/contact" },
+    ]
   };
 
   const footerPolicy = {
-    ro: "Politica De Confidențialitate.",
-    en: "Privacy Policy.",
+    ro: "Politica De Confidențialitate",
+    en: "Privacy Policy",
+    it: "Privacy Policy",
+    es: "Política de Privacidad",
+    pt: "Política de Privacidade",
+    fr: "Politique de Confidentialité",
+    de: "Datenschutzrichtlinie"
   };
 
-  const supportedLangs = ["ro", "en"]; // poți adăuga fr, de, it, es
+  const supportedLangs = ["ro", "en", "it", "es", "pt", "fr", "de"];
 
   const handleLangChange = (e) => {
     const newLang = e.target.value;
     const pathParts = window.location.pathname.split("/").filter(Boolean);
 
     if (supportedLangs.includes(pathParts[0])) {
-      pathParts[0] = newLang; // înlocuiește limba curentă
+      pathParts[0] = newLang;
     } else {
-      pathParts.unshift(newLang); // adaugă limba la început dacă nu există
+      pathParts.unshift(newLang);
     }
 
     window.location.href = "/" + pathParts.join("/");
@@ -57,13 +87,15 @@ export default function FooterClient({ lang = "ro" }) {
       </div>
 
       <nav className="footer-center">
-        {footerNav[lang].map(link => (
+        {footerNav[lang]?.map(link => (
+          <a key={link.href} href={link.href}>{link.text}</a>
+        )) || footerNav.ro.map(link => (
           <a key={link.href} href={link.href}>{link.text}</a>
         ))}
       </nav>
 
       <div className="footer-policy-wrapper">
-        <a href={`/${lang}/privacy`} className="footer-policy">{footerPolicy[lang]}</a>
+        <a href={`/${lang}/privacy`} className="footer-policy">{footerPolicy[lang] || footerPolicy.ro}</a>
       </div>
 
       <div className="footer-copy">

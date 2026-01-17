@@ -2,25 +2,18 @@ import ServiceBlock from "../../../../components/ServiceBlock.astro";
 import ImageSlider from "../../../../components/ImageSlider.jsx";
 
 <ServiceBlock title="Excursii culturale opționale" reverse>
- <p> 
- Pe lângă activitățile culturale standard incluse în proiect, pot fi organizate, la solicitarea grupului, excursii culturale opționale, menite să completeze și să diversifice experiența Erasmus+.
+  <p> 
+    Pe lângă activitățile culturale standard incluse în proiect, pot fi organizate, la solicitarea grupului, excursii culturale opționale, menite să completeze și să diversifice experiența Erasmus+.
+  </p>
+  <p>
+    Aceste activități permit extinderea programului cultural și adaptarea acestuia la interesele participanților.
+  </p>
 
- </p>
-<p>
-Aceste activități permit extinderea programului cultural și adaptarea acestuia la interesele participanților.
-</p>
-
-  <ImageSlider slot="media" client:visible
-    images={[
-      "https://cdn.getyourguide.com/image/format=auto,fit=contain,gravity=auto,quality=60,width=1440,height=650,dpr=1/tour_img/5e3fe1f5a91ca.jpeg",
-      "https://www.bologna-guide.com/wp-content/uploads/2017/07/6925894826_5cd03bef65_o-768x510.jpg",
-      "https://cdn.britannica.com/41/250241-050-75947720/Milan-Duomo-in-Milan-Italy.jpg",
-      "https://www.ciaoitalia.ro/_pics/o/cover/u87lv.jpg",
-  ]} />
+  <ImageSlider slot="media" client:visible serviceName="excursii" />
 </ServiceBlock>
 
 <section class="optional-excursions">
-<h2><p>Exemple de excursii opționale:</p></h2>
+  <h2>Exemple de excursii opționale:</h2>
   <div class="columns-wrapper">
     <div class="column">
       <h3>Florența</h3>

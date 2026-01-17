@@ -1,0 +1,13 @@
+import ServiceBlock from "../../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Rimini – storia e cultura locale" reverse>
+  <p> 
+    Il programma include una passeggiata culturale nella città di Rimini, dove i partecipanti scopriranno:
+    – la storia della città e la sua evoluzione  
+    – i principali monumenti culturali e architettonici  
+    – le specificità della vita locale e le tradizioni della zona
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="rimini" />
+</ServiceBlock>

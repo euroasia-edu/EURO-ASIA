@@ -6,10 +6,5 @@ import ImageSlider from "../../../components/ImageSlider.jsx";
     Local Transport (includes transportation needed for program activities).  
     Airport Transfer (from the arrival airport to the accommodation on the day of arrival, and from the accommodation to the departure airport on the day of departure).
   </p>
-
-  <ImageSlider slot="media" client:visible
-    images={[
-      "https://www.sustainable-bus.com/wp-content/uploads/2021/10/DSC_3571-1920x1080.jpg",
-      "https://cdn.jetphotos.com/640/6/84272_1597085627.jpg",
-    ]} />
+  <ImageSlider slot="media" client:visible serviceName="transport" />
 </ServiceBlock>

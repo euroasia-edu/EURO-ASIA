@@ -1,0 +1,50 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Alojamiento">
+  <p>
+    Ofrecemos soluciones de alojamiento cuidadosamente seleccionadas, adaptadas a los estándares de los programas Erasmus+, garantizando confort, seguridad y una experiencia agradable para todos los participantes.
+  </p>
+
+  <p>
+    El alojamiento se proporciona en instalaciones de 3-4 estrellas, verificadas regularmente y con las que colaboramos constantemente, ubicadas en zonas bien conectadas con los lugares de formación o actividades.
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="cazare" />
+</ServiceBlock>
+
+<section class="accommodation-section">
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Estudiantes / Participantes</h3>
+      <p>
+        – Alojamiento en habitaciones compartidas (3-4 personas), según las necesidades del grupo<br/>
+        – Asignación flexible basada en: edad, género, necesidades especiales<br/>
+        – 3 comidas al día (desayuno, almuerzo y cena), adaptadas también para dietas especiales y restricciones alimentarias
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Profesores / Acompañantes</h3>
+      <p>
+        – Alojamiento en habitaciones individuales<br/>
+        – Mismos estándares de confort y servicios<br/>
+        – Garantía de privacidad y condiciones óptimas para descanso y coordinación
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Servicios incluidos</h3>
+      <p>
+        – Limpieza regular<br/>
+        – Wi-Fi<br/>
+        – Asistencia durante toda la estancia<br/>
+        – Soporte logístico e intervención rápida si es necesario
+      </p>
+    </div>
+  </div>
+
+  <p class="note">
+    Todas las soluciones de alojamiento están elegidas para cumplir con los requisitos Erasmus+ y contribuir a una experiencia educativa segura y de calidad, tanto para estudiantes como para el personal docente.
+  </p>
+</section>

@@ -1,0 +1,50 @@
+import ServiceBlock from "../../../components/ServiceBlock.astro";
+import ImageSlider from "../../../components/ImageSlider.jsx";
+
+<ServiceBlock title="Unterkunft">
+  <p>
+    Wir bieten sorgfältig ausgewählte Unterkunftslösungen, angepasst an die Standards der Erasmus+-Programme, um Komfort, Sicherheit und ein angenehmes Erlebnis für alle Teilnehmer zu gewährleisten.
+  </p>
+
+  <p>
+    Die Unterkunft wird in 3-4-Sterne-Einrichtungen bereitgestellt, die regelmäßig überprüft und kontinuierlich mit uns zusammenarbeiten, gelegen in gut angebundenen Gebieten zu den Ausbildungs- oder Aktionsorten.
+  </p>
+
+  <ImageSlider slot="media" client:visible serviceName="cazare" />
+</ServiceBlock>
+
+<section class="accommodation-section">
+  <div class="columns-wrapper">
+    <div class="column">
+      <h3>Schüler / Teilnehmer</h3>
+      <p>
+        – Unterkunft in Mehrbettzimmern (3-4 Personen), je nach Gruppenbedarf<br/>
+        – Flexible Zuweisung basierend auf: Alter, Geschlecht, Sonderwünsche<br/>
+        – 3 Mahlzeiten täglich (Frühstück, Mittag- und Abendessen), auch angepasst an spezielle Diäten und Ernährungsbeschränkungen
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Lehrkräfte / Begleitpersonal</h3>
+      <p>
+        – Unterkunft in Einzelzimmern<br/>
+        – Gleiche Komfort- und Servicestandards<br/>
+        – Sicherstellung von Privatsphäre und optimalen Bedingungen für Ruhe und Koordination
+      </p>
+    </div>
+
+    <div class="column">
+      <h3>Inkludierte Leistungen</h3>
+      <p>
+        – Regelmäßige Reinigung<br/>
+        – WLAN<br/>
+        – Betreuung während des gesamten Aufenthalts<br/>
+        – Logistische Unterstützung und schnelle Hilfe bei Bedarf
+      </p>
+    </div>
+  </div>
+
+  <p class="note">
+    Alle Unterkunftslösungen werden so gewählt, dass sie den Erasmus+-Anforderungen entsprechen und zu einer sicheren und qualitativ hochwertigen Bildungserfahrung sowohl für Schüler als auch für Lehrkräfte beitragen.
+  </p>
+</section>

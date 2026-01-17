@@ -1,15 +1,10 @@
 import ServiceBlock from "../../../components/ServiceBlock.astro";
 import ImageSlider from "../../../components/ImageSlider.jsx";
 
-<ServiceBlock title="Instruire Pedagogică, Lingvistică și Culturală" >
+<ServiceBlock title="Instruire Pedagogică, Lingvistică și Culturală">
   <p>
-Instruire Pedagogică, Lingvistică și Culturală (de ex. Curs de Limba Italiana)
+    Instruire Pedagogică, Lingvistică și Culturală (de ex. Curs de Limba Italiană)
   </p>
 
-  <ImageSlider slot="media" client:visible
-    images={[
-       "https://i.imgur.com/gZHPrPl.jpeg",
-      "https://i.imgur.com/Hvq2m1J.jpeg"
-
-  ]} />
+  <ImageSlider slot="media" client:visible serviceName="instruire" />
 </ServiceBlock>
