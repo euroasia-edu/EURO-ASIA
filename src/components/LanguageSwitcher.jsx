@@ -64,9 +64,7 @@ export default function LanguageSwitcher({ lang = "ro", currentPath = "/" }) {
               key={code}
               className={`lang-option ${lang === code ? 'active' : ''}`}
               href={getHrefForLang(code)}
-              onClick={() => {
-                document.cookie = `lang=${code}; path=/; max-age=31536000`;
-                setIsOpen(false);
+              onClick={() => {setIsOpen(false);
               }}
             >
               <span className="flag-icon">{flag}</span>
