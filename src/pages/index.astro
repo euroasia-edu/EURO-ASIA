@@ -1,21 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-export async function getStaticPaths() {
-  const langs = ['ro', 'en', 'it', 'es', 'pt', 'fr', 'de'];
-  return langs.map(lang => ({
-    params: { lang },
-    props: { lang }
-  }));
-}
+// FIXED RO pentru root (fără getStaticPaths)
+const lang = 'ro';
 
-const { lang } = Astro.props;
 let t;
-
 try {
-  t = (await import(`../i18n/${lang}/home.js`)).default;  // ← 2 ../ în sus
-} catch (error) {
-  t = (await import("../i18n/ro/home.js")).default;       // ← 2 ../ în sus
+  const module = await import(`../i18n/${lang}/home.js`);
+  t = module.default.home;  // ← .home !!!!!
+} catch {
+  const fallback = await import("../i18n/ro/home.js");
+  t = fallback.default.home;  // ← .home !!!!!
 }
 ---
 
