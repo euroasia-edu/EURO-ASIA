@@ -1,5 +1,8 @@
 :root {
-  --bg: #ffffff;
+  --bg: linear-gradient(135deg, 
+    rgba(248, 250, 252, 0.9) 0%, 
+    rgba(226, 232, 240, 1) 50%,
+    #f1f5f9 100%);;
   --text: #07042e;
   --muted: #6b7280;
   --accent: #1f2937;
@@ -349,14 +352,10 @@ body.gallery-open {
   box-sizing: border-box;
 }
 
-/* ========== ABOUT SECTION - PREMIUM ========== */
+/* ========== ABOUT SECTION ========== */
 .about-section {
   position: relative;
   padding: 140px 24px;
-  background: linear-gradient(135deg, 
-    rgba(248, 250, 252, 0.9) 0%, 
-    rgba(226, 232, 240, 1) 50%,
-    #f1f5f9 100%);
   overflow: hidden;
 }
 
@@ -708,7 +707,10 @@ html, body {
 /* ========== CONTACT PAGE ========== */
 .contact-section {
   padding: 120px 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, 
+    rgba(248, 250, 252, 0.9) 0%, 
+    rgba(226, 232, 240, 1) 50%,
+    #f1f5f9 100%);
   position: relative;
 }
 
