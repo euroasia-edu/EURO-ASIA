@@ -54,37 +54,6 @@ const Organizare = await import(`../../content/${contentLang}/services/organizar
     <Organizare.default class="scroll-animate" />
   </div>
 </section>
-<script is:inline>
-  const blocks = document.querySelectorAll('.block');
-  
-  // INIT - INVIZIBIL + slide MINIM
-  blocks.forEach(block => {
-    block.style.opacity = '0';
-    block.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    
-    // Slide MAI SUBTIL pentru grid
-    if (block.classList.contains('reverse')) {
-      block.style.transform = 'translateX(30px)';
-    } else {
-      block.style.transform = 'translateX(-30px)';
-    }
-  });
-  
-  // SCROLL - FADE + centru
-  const checkScroll = () => {
-    blocks.forEach(block => {
-      const rect = block.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.8 && block.style.opacity === '0') {
-        block.style.opacity = '1';
-        block.style.transform = 'translateX(0)';
-      }
-    });
-  };
-  
-  window.addEventListener('scroll', checkScroll);
-  window.addEventListener('load', checkScroll);
-  checkScroll();
-</script>
 
 
 </BaseLayout>
