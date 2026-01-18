@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import roLegal from "../../i18n/ro/legal.js";  // ✅ DATE CENTRALIZATE
 
 export async function getStaticPaths() {
   const langs = ['ro', 'en', 'it', 'es', 'pt', 'fr', 'de'];
@@ -13,11 +14,9 @@ const { lang } = Astro.props;
 let t;
 
 try {
-  const module = await import(`../../i18n/${lang}/legal.js`);
-  t = module.default.legal;
+  t = (await import(`../../i18n/${lang}/legal.js`)).default;
 } catch {
-  const fallback = await import("../../i18n/it/legal.js");
-  t = fallback.default.legal;
+  t = (await import("../../i18n/it/legal.js")).default;
 }
 ---
 
@@ -26,35 +25,31 @@ try {
     <section class="legal-section">
       <h1>{t.intro}</h1>
 
-      <!-- Identificazione -->
-<div class="identification-card">
-  <p><strong>Denominazione:</strong> {t.identification.company}</p>
-  <p><strong>Partita IVA:</strong> {t.identification.partitaIva}</p>
-  <p><strong>REA:</strong> {t.identification.rea}</p>
-  <p><strong>Sede Legale:</strong> {t.identification.address}</p>
-  <p><strong>Telefono:</strong> {t.identification.phone}</p>
-  <p><strong>Email:</strong> <a href={`mailto:${t.identification.email}`}>{t.identification.email}</a></p>
-</div>
+      <!-- DATE IDENTIFICARE -->
+      <h2>{t.identification.title}</h2>
+      <div class="identification-card">
+        <p><strong>{t.identification.companyLabel}:</strong> {roLegal.identification.company}</p>
+        <p><strong>{t.identification.partitaIvaLabel}:</strong> {roLegal.identification.partitaIva}</p>
+        <p><strong>{t.identification.reaLabel}:</strong> {roLegal.identification.rea}</p>
+        <p><strong>{t.identification.addressLabel}:</strong> {roLegal.identification.address}</p>
+        <p><strong>{t.identification.phoneLabel}:</strong> {roLegal.identification.phone}</p>
+        <p><strong>{t.identification.emailLabel}:</strong> <a class="p-mail" href={`mailto:${roLegal.identification.email}`}>{roLegal.identification.email}</a></p>
+      </div>
 
-
-      <!-- Utilizzatori -->
-      <h2>Utilizzatori</h2>
+      <!-- SECȚIUNI -->
+      <h2>{t.usersTitle}</h2>
       <p>{t.users}</p>
 
-      <!-- Proprietà Intellettuale -->
-      <h2>Proprietà Intellettuale e Industriale</h2>
+      <h2>{t.propertyTitle}</h2>
       <p>{t.property}</p>
 
-      <!-- Responsabilità -->
-      <h2>Esclusione di Garanzie e Responsabilità</h2>
+      <h2>{t.responsibilityTitle}</h2>
       <p>{t.responsibility}</p>
 
-      <!-- Legge Applicabile -->
-      <h2>Legge Applicabile e Giurisdizione</h2>
+      <h2>{t.lawTitle}</h2>
       <p>{t.law}</p>
 
-      <!-- ODR -->
-      <h2>Piattaforma ODR Europea</h2>
+      <h2>{t.odrTitle}</h2>
       <p>{t.odr}</p>
     </section>
   </div>
@@ -106,7 +101,6 @@ try {
       .legal-section {
         padding: 32px 16px;
       }
-      
       .identification-card {
         padding: 20px;
       }
