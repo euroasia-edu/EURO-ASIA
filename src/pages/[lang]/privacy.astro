@@ -1,46 +1,101 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+
+export async function getStaticPaths() {
+  const langs = ['ro', 'en', 'it', 'es', 'pt', 'fr', 'de'];
+  return langs.map(lang => ({
+    params: { lang },
+    props: { lang }
+  }));
+}
+
+const { lang } = Astro.props;
+let t;
+
+try {
+  const module = await import(`../../i18n/${lang}/privacy.js`);
+  t = module.default.privacy;
+} catch {
+  const fallback = await import("../../i18n/ro/privacy.js");
+  t = fallback.default.privacy;
+}
+---
+
 <BaseLayout title={t.title} lang={lang}>
+  <!-- HTML NOUL tău cu TOATE secțiunile GDPR -->
   <div class="container">
     <section class="privacy-section">
       <h1>{t.h1}</h1>
       <p>{t.intro}</p>
 
-      <!-- Section 1 -->
       <h2>{t.section1_title}</h2>
       <p>{t.section1_text}</p>
-      <ul>
-        {t.section1_list.map((item, i) => (<li key={i}>{item}</li>))}
-      </ul>
+      <ul>{t.section1_list.map((item, i) => (<li key={i}>{item}</li>))}</ul>
 
-      <!-- Section 2 -->
       <h2>{t.section2_title}</h2>
       <p>{t.section2}</p>
 
-      <!-- Section 3 -->
       <h2>{t.section3_title}</h2>
       <p>{t.section3}</p>
 
-      <!-- Section 4 - Drepturi -->
       <h2>{t.section4_title}</h2>
       <p>{t.section4_text}</p>
-      <ul>
-        {t.section4_list.map((item, i) => (<li key={i}>{item}</li>))}
-      </ul>
+      <ul>{t.section4_list.map((item, i) => (<li key={i}>{item}</li>))}</ul>
       <p>{t.section4_contact} <a class="p-mail" href={`mailto:${t.section4_email}`}>{t.section4_email}</a>.</p>
 
-      <!-- Section 5 - Securitate -->
       <h2>{t.section5_title}</h2>
-      <p>{t.section5} <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener">EmailJS privacy policy</a>.</p>
+      <p>{t.section5} <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank">EmailJS privacy policy</a>.</p>
 
-      <!-- Section 6 - Modificări -->
       <h2>{t.section6_title}</h2>
       <p>{t.section6}</p>
 
-      <!-- Section 7 - Contact -->
       <h2>{t.section7_title}</h2>
       <p>{t.section7} <a class="p-mail" href={`mailto:${t.email}`}>{t.email}</a>.</p>
 
-      <!-- Final -->
       <p><strong>{t.final}</strong></p>
     </section>
   </div>
+
+<style>
+.privacy-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+  line-height: 1.7;
+}
+
+.privacy-section h1,
+.privacy-section h2 {
+  margin-bottom: 24px;
+}
+
+.privacy-section p,
+.privacy-section ul {
+  margin-bottom: 20px;
+}
+
+/* ✅ FIX BULLET POINTS */
+.privacy-section ul {
+  padding-left: 32px;  /* mai mult spațiu */
+  margin-left: 0;      /* anulează browser default */
+  list-style-position: outside; /* bullet OUTSIDE */
+}
+
+.privacy-section li {
+  margin-bottom: 8px;
+  padding-left: 8px;   /* spațiu după bullet */
+}
+
+/* Link-uri */
+.p-mail {
+  color: #aa0000;
+  text-decoration: none;
+}
+
+.p-mail:hover {
+  text-decoration: underline;
+}
+</style>
+
 </BaseLayout>
