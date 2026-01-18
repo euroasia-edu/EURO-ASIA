@@ -1,8 +1,8 @@
 :root {
   --bg: linear-gradient(135deg, 
-    rgba(248, 250, 252, 0.9) 0%, 
-    rgba(226, 232, 240, 1) 50%,
-    #f1f5f9 100%);;
+    rgba(248, 250, 252, 0.9) 15%, 
+    rgb(209, 220, 235) 50%,
+    #e4f1ff 100%);
   --text: #07042e;
   --muted: #6b7280;
   --accent: #1f2937;
@@ -453,6 +453,10 @@ body.gallery-open {
     text-align: center;
   }
   
+  .about-section {
+    padding: 40px 0;;
+  }
+
   .about-text h1 {
     font-size: 2.2rem;
   }
@@ -708,10 +712,11 @@ html, body {
 .contact-section {
   padding: 120px 0;
   background: linear-gradient(135deg, 
-    rgba(248, 250, 252, 0.9) 0%, 
-    rgba(226, 232, 240, 1) 50%,
-    #f1f5f9 100%);
+    rgba(248, 250, 252, 0.9) 15%, 
+    rgb(163, 180, 204) 50%,
+    #e4f1ff 100%);
   position: relative;
+  
 }
 
 .contact-container {
@@ -721,15 +726,17 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+padding-bottom: 100px;
 }
 
 #contact-form, .contact-info {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.603);
+  backdrop-filter: blur(21px);
+  -webkit-backdrop-filter: blur(21px);
   border-radius: 24px;
   padding: 48px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
+  
 }
 
 #contact-form h1, .contact-info h2 {
@@ -777,17 +784,23 @@ html, body {
 }
 
 .map-container {
-  margin-top: 80px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+ 
+
 }
 
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 0 16px;
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .contact-section {
+    padding: 20px 0;
+  
+  }
+  .map-container {
+    margin-top: 40px;
+
   }
 }
 
