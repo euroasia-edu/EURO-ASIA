@@ -1,27 +1,44 @@
 export default {
   privacy: {
-    title: "Datenschutzrichtlinie | EURO ASIA EDUCATION",
-    h1: "Datenschutzrichtlinie",
-    intro: "EURO ASIA EDUCATION ist der Schutz Ihrer Privatsphäre verpflichtet. Diese Datenschutzerklärung erläutert, wie wir Ihre personenbezogenen Daten sammeln, verwenden und schützen, wenn Sie das Kontaktformular auf dieser Website nutzen.",
-    section1_title: "Informationen, die wir erfassen",
-    section1_list: ["Name", "E-Mail-Adresse", "Nachricht oder Anfrage, die Sie senden"],
-    section1_text: "Wenn Sie unser Kontaktformular verwenden, können wir folgende personenbezogenen Daten erfassen:",
-    section2_title: "Wie wir Ihre Daten verwenden",
-    section2: "Ihre personenbezogenen Daten werden ausschließlich zur Beantwortung von Anfragen und Zurstellung der gewünschten Informationen verwendet. Wir verkaufen, vermieten oder übermitteln Ihre Daten nicht an Dritte zu kommerziellen Zwecken, außer wenn dies gesetzlich vorgeschrieben ist.",
-    section3_title: "Datenspeicherung",
-    section3: "Wir speichern Ihre personenbezogenen Daten nur so lange wie nötig, um auf die Anfrage zu antworten oder um gesetzliche Verpflichtungen zu erfüllen. Nach Erfüllung des Zwecks werden die Daten sicher gelöscht.",
+    title: "Datenschutzerklärung | EURO ASIA EDUCATION",
+    h1: "Datenschutzerklärung",
+    intro: "EURO ASIA EDUCATION ist der Schutz Ihrer Privatsphäre verpflichtet. Diese Datenschutzerklärung erläutert, wie wir Ihre personenbezogenen Daten erheben, verwenden und schützen, wenn Sie das Kontaktformular auf dieser Website nutzen.",
+    
+    section1_title: "Von uns erhobene Informationen",
+    section1_text: "Wenn Sie unser Kontaktformular nutzen, erheben wir folgende personenbezogene Daten:",
+    section1_list: ["Name", "E-Mail-Adresse", "Telefonnummer", "Nachricht oder Anfrage, die Sie senden"],
+    
+    section2_title: "Verwendung Ihrer Daten",
+    section2: "Ihre personenbezogenen Daten werden ausschließlich verwendet, um auf Anfragen zu antworten und die gewünschten Informationen per E-Mail oder Telefon bereitzustellen. Wir verkaufen, vermieten oder teilen Ihre Daten nicht mit Dritten zu kommerziellen Zwecken, außer wenn dies gesetzlich vorgeschrieben ist.",
+    
+    section3_title: "Speicherung der Daten",
+    section3: "Wir speichern Ihre personenbezogenen Daten nur so lange wie nötig, um Ihre Anfrage zu beantworten oder gesetzliche Verpflichtungen zu erfüllen (maximal 3 Jahre für geschäftliche Kommunikation). Danach werden die Daten sicher gelöscht.",
+    
     section4_title: "Ihre Rechte",
-    section4_text: "Sie haben folgende Rechte in Bezug auf Ihre personenbezogenen Daten:",
+    section4_text: "Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:",
     section4_list: [
-      "Auskunftsrecht — Sie können bestätigen lassen, ob wir Ihre Daten verarbeiten, und eine Kopie davon erhalten;",
-      "Berichtigungsrecht — Sie können die Korrektur unrichtiger Daten verlangen;",
-      "Löschungsrecht — Sie können die Löschung der Daten verlangen, vorbehaltlich gesetzlicher Bedingungen;",
-      "Widerrufsrecht — Sie können die erteilte Einwilligung widerrufen, ohne die Rechtmäßigkeit der vor dem Widerruf erfolgten Verarbeitung zu beeinträchtigen."
+      "Auskunftsrecht — Bestätigung, ob wir Ihre Daten verarbeiten, und Erhalt einer Kopie",
+      "Berichtigungsrecht — Korrektur unrichtiger Daten",
+      "Löschungsrecht — Löschung der Daten unter gesetzlichen Bedingungen",
+      "Einschränkungsrecht — bei bestimmten Situationen",
+      "Datenübertragbarkeitsrecht — Erhalt der Daten in strukturiertem Format",
+      "Widerrufsrecht — Widerruf der Einwilligung ohne Beeinträchtigung früherer Verarbeitung"
     ],
-    section4_contact: "Um eines dieser Rechte auszuüben, können Sie uns an folgende E-Mail-Adresse wenden: ",
-    section5_title: "Kontakt",
-    section5: "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, können Sie uns an folgende Adresse schreiben: ",
+    
+    section4_contact: "Um eines dieser Rechte auszuüben, kontaktieren Sie uns unter:",
+    section4_email: "info@euroasia-education.com",
+    
+    section5_title: "Sicherheit",
+    section5: "Wir nutzen EmailJS als Drittanbieter-Dienst für die Kontaktformular-Verarbeitung. Daten werden sicher über HTTPS übertragen und gemäß EmailJS-Richtlinien gespeichert. Details unter ",
+    section5_emailjs: "EmailJS Datenschutzerklärung",
+    
+    section6_title: "Änderungen der Erklärung",
+    section6: "Wir behalten uns das Recht vor, diese Erklärung zu aktualisieren. Änderungen werden auf dieser Seite veröffentlicht.",
+    
+    section7_title: "Kontakt",
+    section7: "Für Fragen zu dieser Datenschutzerklärung:",
+    
     email: "info@euroasia-education.com",
-    final: "Diese Datenschutzerklärung gilt nur für die über das Kontaktformular dieser Website erfassten Daten."
+    final: "Diese Datenschutzerklärung wurde zuletzt am 18. Januar 2026 aktualisiert und gilt nur für Daten, die über das Kontaktformular dieser Website erhoben werden."
   }
 }
