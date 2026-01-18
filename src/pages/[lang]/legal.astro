@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const langs = ['ro', 'en', 'it', 'es', 'pt', 'fr', 'de'];
+  return langs.map(lang => ({
+    params: { lang },
+    props: { lang }
+  }));
+}
+
+const { lang } = Astro.props;
+let t;
+
+try {
+  const module = await import(`../../i18n/${lang}/legal.js`);
+  t = module.default.legal;
+} catch {
+  const fallback = await import("../../i18n/it/legal.js");
+  t = fallback.default.legal;
+}
+---
+
+<BaseLayout title={t.title} lang={lang}>
+  <div class="container">
+    <section class="legal-section">
+      <h1>{t.intro}</h1>
+
+      <!-- Identificazione -->
+<div class="identification-card">
+  <p><strong>Denominazione:</strong> {t.identification.company}</p>
+  <p><strong>Partita IVA:</strong> {t.identification.partitaIva}</p>
+  <p><strong>REA:</strong> {t.identification.rea}</p>
+  <p><strong>Sede Legale:</strong> {t.identification.address}</p>
+  <p><strong>Telefono:</strong> {t.identification.phone}</p>
+  <p><strong>Email:</strong> <a href={`mailto:${t.identification.email}`}>{t.identification.email}</a></p>
+</div>
+
+
+      <!-- Utilizzatori -->
+      <h2>Utilizzatori</h2>
+      <p>{t.users}</p>
+
+      <!-- Proprietà Intellettuale -->
+      <h2>Proprietà Intellettuale e Industriale</h2>
+      <p>{t.property}</p>
+
+      <!-- Responsabilità -->
+      <h2>Esclusione di Garanzie e Responsabilità</h2>
+      <p>{t.responsibility}</p>
+
+      <!-- Legge Applicabile -->
+      <h2>Legge Applicabile e Giurisdizione</h2>
+      <p>{t.law}</p>
+
+      <!-- ODR -->
+      <h2>Piattaforma ODR Europea</h2>
+      <p>{t.odr}</p>
+    </section>
+  </div>
+
+  <style>
+    .legal-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 16px;
+      line-height: 1.7;
+    }
+
+    .legal-section h1 {
+      font-size: 2.2rem;
+      margin-bottom: 32px;
+      color: #000a42;
+    }
+
+    .legal-section h2 {
+      font-size: 1.5rem;
+      margin: 40px 0 20px 0;
+      color: #aa0000;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 8px;
+    }
+
+    .identification-card {
+      background: #f8f8f8;
+      padding: 24px;
+      border-radius: 12px;
+      border-left: 4px solid #aa0000;
+      margin: 24px 0;
+    }
+
+    .identification-card p {
+      margin: 12px 0;
+    }
+
+    .p-mail {
+      color: #aa0000;
+      text-decoration: none;
+    }
+
+    .p-mail:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .legal-section {
+        padding: 32px 16px;
+      }
+      
+      .identification-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</BaseLayout>

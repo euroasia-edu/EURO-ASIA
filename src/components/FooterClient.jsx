@@ -39,15 +39,27 @@ export default function FooterClient({ lang = "ro" }) {
     ]
   };
 
-  const footerPolicy = {
-    ro: "Politica De Confidențialitate",
-    en: "Privacy Policy",
+const footerPolicy = {
+  privacy: {
+    ro: "Politica de Confidențialitate",
+    en: "Privacy Policy", 
     it: "Privacy Policy",
     es: "Política de Privacidad",
     pt: "Política de Privacidade",
     fr: "Politique de Confidentialité",
-    de: "Datenschutzrichtlinie"
-  };
+    de: "Datenschutzerklärung"
+  },
+  legal: { 
+    ro: "Termeni și Condiții",
+    en: "Legal Notice",
+    it: "Informativa Legale", 
+    es: "Aviso Legal",
+    pt: "Aviso Legal", 
+    fr: "Mentions Légales",
+    de: "Rechtliche Hinweise"
+  }
+};
+
 
   const supportedLangs = ["ro", "en", "it", "es", "pt", "fr", "de"];
 
@@ -94,9 +106,16 @@ export default function FooterClient({ lang = "ro" }) {
         ))}
       </nav>
 
-      <div className="footer-policy-wrapper">
-        <a href={`/${lang}/privacy`} className="footer-policy">{footerPolicy[lang] || footerPolicy.ro}</a>
-      </div>
+<div className="footer-policy-wrapper">
+  <a href={`/${lang}/privacy`} className="footer-policy">
+    {footerPolicy.privacy[lang] || footerPolicy.privacy.ro}
+  </a>
+  <span> | </span>
+  <a href={`/${lang}/legal`} className="footer-policy">
+    {footerPolicy.legal[lang] || footerPolicy.legal.ro}
+  </a>
+</div>
+
 
       <div className="footer-copy">
         &copy; {new Date().getFullYear()} EURO ASIA EDUCATION. All rights reserved.
