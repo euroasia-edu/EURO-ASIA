@@ -210,6 +210,7 @@ section {
   object-fit: contain;
   transition: opacity 0.3s ease;
   opacity: 1;
+  
 }
 
 .gallery-image.is-fading {
@@ -238,11 +239,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .gallery-overlay.open {
   opacity: 1;
   visibility: visible;
+  
 }
 
 body.gallery-open {
@@ -263,6 +266,8 @@ body.gallery-open {
   max-width: 100%;
   max-height: 90vh;
   object-fit: contain;
+  border-radius: 12px !important;
+  
 }
 
 .gallery-modal button {
@@ -341,6 +346,7 @@ body.gallery-open {
   width: 100%;
   height: 100%;
   transition: transform 0.45s ease;
+  
 }
 
 .gallery-track img {
@@ -350,6 +356,13 @@ body.gallery-open {
   object-fit: contain;
   padding: 6vh 6vw;
   box-sizing: border-box;
+  
+}
+
+
+.gallery-slider {
+  align-items: flex-start !important; 
+  padding-top: 40px !important;
 }
 
 /* ========== ABOUT SECTION ========== */
@@ -887,4 +900,36 @@ padding-bottom: 100px;
 .phone-line-second span {
   display: inline-block;
   width: 68px;
+}
+
+/* ========== Servicii animatie ========= */
+
+/* ========== Galerie animatie ========= */
+
+/* ANIMAȚII SIGURE - NU sparge conținutul */
+.services-section * {
+  opacity: 1 !important;  /* FORȚEAZĂ vizibilitatea */
+}
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-animate.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate.slide-left { transform: translateX(-50px) translateY(20px); }
+.scroll-animate.slide-right { transform: translateX(50px) translateY(20px); }
+
+/* DOAR pentru thumbnails galerie - NU pentru MDX */
+.gallery-grid img {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s forwards;
+}
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
 }
