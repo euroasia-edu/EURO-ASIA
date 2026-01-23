@@ -11,10 +11,10 @@ export default {
     emailLabel: "Email",
     
     company: "EURO ASIA EDUCATION",
-    partitaIva: "ITxxxxxxxxxxx",    // ← COMPLETEAZĂ
-    rea: "RI-XXXXXX",              // ← COMPLETEAZĂ
-    address: "Via Roma xxx, xxx Rimini (RN), Italia",  // ← COMPLETEAZĂ
-    phone: "+39 333 1234567",      // ← COMPLETEAZĂ
+    partitaIva: "04073170369",    // ← COMPLETEAZĂ
+    rea: "RI-440709",              // ← COMPLETEAZĂ
+    address: "41013 Castelfranco E., Via Palestro, Italia",  // ← COMPLETEAZĂ
+    phone: "+40720754962",      // ← COMPLETEAZĂ
     email: "info@euroasia-education.com"
   },
 
