@@ -120,6 +120,8 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  margin-top: 21px;
+  
 }
 
 @media (max-width: 768px) {
@@ -362,7 +364,7 @@ body.gallery-open {
 
 .gallery-slider {
   align-items: flex-start !important; 
-  padding-top: 30px !important;
+  padding-top: 10px !important;
 }
 
 /* ========== ABOUT SECTION ========== */
@@ -906,25 +908,24 @@ padding-bottom: 100px;
 
 /* ========== Galerie animatie ========= */
 
-/* ANIMAȚII SIGURE - NU sparge conținutul */
+
 .services-section * {
-  opacity: 1 !important;  /* FORȚEAZĂ vizibilitatea */
+  opacity: 1 !important; 
 }
-.scroll-animate {
+.services-section {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s forwards;
+}
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 768px) {
+.services-section {
+  margin-top: 1px;
+}
 }
 
-.scroll-animate.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.scroll-animate.slide-left { transform: translateX(-50px) translateY(20px); }
-.scroll-animate.slide-right { transform: translateX(50px) translateY(20px); }
-
-/* DOAR pentru thumbnails galerie - NU pentru MDX */
 .gallery-grid img {
   opacity: 0;
   transform: translateY(30px);

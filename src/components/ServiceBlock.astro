@@ -17,6 +17,7 @@ const {
 </section>
 
 <style>
+  
 .block {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -26,13 +27,7 @@ const {
   max-width: 1200px;
   padding: 0 16px;
 }
-.block {
-  opacity: 0.9; /* fade subtil */
-  transition: all 0.6s ease;
-}
-.block.animate {
-  opacity: 1;
-}
+
 .block.reverse {
   grid-template-areas: "content media";
   background: #f8f8f8;
@@ -55,7 +50,7 @@ const {
 
 .content h2 {
   margin-bottom: 16px;
-  /* ⭐ DOAR GRADIENT culoare ⭐ */
+
   background: linear-gradient(135deg, #000a42 0%, #aa0000 50%, #000a42 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -66,6 +61,7 @@ const {
   .block {
     grid-template-columns: 1fr;
     gap: 24px;
+    margin-top: 10px;
   }
 
   .block.reverse {
