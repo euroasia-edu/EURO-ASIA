@@ -12,7 +12,7 @@ export default {
     ],
     transport: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Rimini_in_Italia.svg/800px-Rimini_in_Italia.svg.png"
+
     ],
     activitati: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJQeJyzgAzTEVqXiGe90RGBFhfp_4RcJJMQ&s"],
     rimini: [
