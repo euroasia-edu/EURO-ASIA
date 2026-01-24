@@ -13,7 +13,7 @@ export default {
     company: "EURO ASIA EDUCATION",
     partitaIva: "04073170369",    // ← COMPLETEAZĂ
     rea: "RI-440709",              // ← COMPLETEAZĂ
-    address: "41013 Castelfranco E., Via Palestro, Italia",  // ← COMPLETEAZĂ
+    address: "41013 Castelfranco Emilia, Via Palestro, Italia",  // ← COMPLETEAZĂ
     phone: "+40720754962",      // ← COMPLETEAZĂ
     email: "info@euroasia-education.com"
   },
